@@ -2283,10 +2283,10 @@ footer small {
   position: absolute;
   inset: 0;
 
-  background-image: url("images/nesi2.png");
+  background-image: url("images/ChatGPT\ Image\ Sep\ 21\,\ 2026\,\ 12_27_14\ AM.png");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 70% auto;
+  background-size: 50% auto;
 
   opacity: 0.55;
   z-index: 1;
@@ -2320,7 +2320,7 @@ footer small {
 /* =========================
    MOBILE
    ========================= */
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .letter-card {
     padding: 25px;
     border-radius: 20px;
@@ -2329,7 +2329,7 @@ footer small {
   .letter-card::before {
     background-size: 100%;
     background-position: center;
-    opacity: 0.8;
+    opacity: 0.7;
   }
 
   .letter-card p {
@@ -2356,7 +2356,7 @@ footer small {
 
   .letter-card::before {
     background-size: 100% auto;
-    opacity: 0.8;
+    opacity: 0.7;
   }
 
   .letter-card p {
