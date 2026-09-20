@@ -2313,7 +2313,7 @@ footer small {
   .letter-card::before {
     background-size: 75% auto;
     background-position: center;
-    opacity: 1;
+    opacity: 0.8;
   }
 }
 
@@ -2329,7 +2329,7 @@ footer small {
   .letter-card::before {
     background-size: 100%;
     background-position: center;
-    opacity: 0.5;
+    opacity: 0.8;
   }
 
   .letter-card p {
@@ -2356,7 +2356,7 @@ footer small {
 
   .letter-card::before {
     background-size: 100% auto;
-    opacity: 0.15;
+    opacity: 0.8;
   }
 
   .letter-card p {
