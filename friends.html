@@ -1,0 +1,906 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Her Memories ❤️</title>
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="friends.css" />
+  </head>
+
+  <body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+
+      <div class="container">
+
+        <a class="navbar-brand" href="index.html">
+          Her Memories ❤️
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarMenu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarMenu">
+
+          <ul class="navbar-nav ms-auto">
+
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">
+                Home
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" href="friends.html">
+                Memories
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </nav>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="memory-hero">
+
+      <div class="container text-center">
+
+        <p class="small-title">
+          A little collection of beautiful moments
+        </p>
+
+        <h1>
+          Her Beautiful Memories ❤️
+        </h1>
+
+        <p class="hero-text">
+          Behind every photograph is a story.
+          Behind every video is a moment we wish we could relive.
+        </p>
+
+        <div class="scroll-heart">
+          ♥
+        </div>
+
+        <p class="scroll-text">
+          Scroll slowly...
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= INTRO ================= -->
+
+    <section class="memory-intro">
+
+      <div class="container">
+
+        <div class="intro-box reveal">
+
+          <span class="quote-mark">“</span>
+
+          <h2 style="margin-top: 70px;">
+            The best memories are the ones we never planned.
+          </h2>
+
+          <p>
+            Sometimes the smallest moments become the memories
+            we remember forever. A random picture, a silly video,
+            a laugh that lasted too long, or simply being together.
+          </p>
+
+          <span class="quote-mark quote-end">”</span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= PHOTO MEMORIES ================= -->
+
+    <section class="friends-section">
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <p>Little pieces of happiness</p>
+
+          <h2>
+            Her Favorite People 🌸
+          </h2>
+
+        </div>
+
+
+        <div class="row g-4 justify-content-center">
+
+
+          <!-- PHOTO 1 -->
+
+          <div class="col-12 col-sm-6 col-lg-4">
+
+            <div class="friend-card reveal">
+
+              <div class="image-container">
+
+                <img
+                  src="images/WhatsApp Image 2026-09-13 at 6.33.53 PM.jpeg"
+                  alt="Friend memory"
+                  class="friend-image"
+                  loading="lazy"
+                />
+
+                <div class="image-overlay">
+
+                  <button
+                    class="view-btn"
+                    onclick="openImage(
+                      'images/friend1.jpg',
+                      'A Beautiful Memory ❤️'
+                    )"
+                  >
+                    View Memory
+                  </button>
+
+                </div>
+
+              </div>
+
+              <div class="friend-info">
+
+                <h3>Best Friend ❤️</h3>
+
+                <p>
+                  Some friendships just make ordinary days
+                  feel extraordinary.
+                </p>
+
+                <span class="friend-heart">♥</span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- PHOTO 2 -->
+
+          <div class="col-12 col-sm-6 col-lg-4">
+
+            <div class="friend-card reveal">
+
+              <div class="image-container">
+
+                <img
+                  src="images/friend2.jpg"
+                  alt="Friend memory"
+                  class="friend-image"
+                  loading="lazy"
+                />
+
+                <div class="image-overlay">
+
+                  <button
+                    class="view-btn"
+                    onclick="openImage(
+                      'images/friend2.jpg',
+                      'Forever Friends 🌸'
+                    )"
+                  >
+                    View Memory
+                  </button>
+
+                </div>
+
+              </div>
+
+              <div class="friend-info">
+
+                <h3>Forever Friend 🌸</h3>
+
+                <p>
+                  A thousand conversations and somehow
+                  there is always something new to talk about.
+                </p>
+
+                <span class="friend-heart">♥</span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- PHOTO 3 -->
+
+          <div class="col-12 col-sm-6 col-lg-4">
+
+            <div class="friend-card reveal">
+
+              <div class="image-container">
+
+                <img
+                  src="images/friend3.jpg"
+                  alt="Friend memory"
+                  class="friend-image"
+                  loading="lazy"
+                />
+
+                <div class="image-overlay">
+
+                  <button
+                    class="view-btn"
+                    onclick="openImage(
+                      'images/friend3.jpg',
+                      'Crazy Memories 😂'
+                    )"
+                  >
+                    View Memory
+                  </button>
+
+                </div>
+
+              </div>
+
+              <div class="friend-info">
+
+                <h3>Crazy Partner 😂</h3>
+
+                <p>
+                  Because the best memories usually begin
+                  with absolutely terrible ideas.
+                </p>
+
+                <span class="friend-heart">♥</span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- PHOTO 4 -->
+
+          <div class="col-12 col-sm-6 col-lg-4">
+
+            <div class="friend-card reveal">
+
+              <div class="image-container">
+
+                <img
+                  src="images/friend4.jpg"
+                  alt="Friend memory"
+                  class="friend-image"
+                  loading="lazy"
+                />
+
+                <div class="image-overlay">
+
+                  <button
+                    class="view-btn"
+                    onclick="openImage(
+                      'images/friend4.jpg',
+                      'Sweet Memory 💕'
+                    )"
+                  >
+                    View Memory
+                  </button>
+
+                </div>
+
+              </div>
+
+              <div class="friend-info">
+
+                <h3>Sweet Soul 💕</h3>
+
+                <p>
+                  Some people don't just become friends.
+                  They become part of your story.
+                </p>
+
+                <span class="friend-heart">♥</span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- PHOTO 5 -->
+
+          <div class="col-12 col-sm-6 col-lg-4">
+
+            <div class="friend-card reveal">
+
+              <div class="image-container">
+
+                <img
+                  src="images/friend5.jpg"
+                  alt="Friend memory"
+                  class="friend-image"
+                  loading="lazy"
+                />
+
+                <div class="image-overlay">
+
+                  <button
+                    class="view-btn"
+                    onclick="openImage(
+                      'images/friend5.jpg',
+                      'Beautiful Moment ✨'
+                    )"
+                  >
+                    View Memory
+                  </button>
+
+                </div>
+
+              </div>
+
+              <div class="friend-info">
+
+                <h3>Memory Maker ✨</h3>
+
+                <p>
+                  Every picture holds a moment that deserves
+                  to be remembered.
+                </p>
+
+                <span class="friend-heart">♥</span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- PHOTO 6 -->
+
+          <div class="col-12 col-sm-6 col-lg-4">
+
+            <div class="friend-card reveal">
+
+              <div class="image-container">
+
+                <img
+                  src="images/friend6.jpg"
+                  alt="Friend memory"
+                  class="friend-image"
+                  loading="lazy"
+                />
+
+                <div class="image-overlay">
+
+                  <button
+                    class="view-btn"
+                    onclick="openImage(
+                      'images/friend6.jpg',
+                      'Special Memory 🌷'
+                    )"
+                  >
+                    View Memory
+                  </button>
+
+                </div>
+
+              </div>
+
+              <div class="friend-info">
+
+                <h3>Special One 🌷</h3>
+
+                <p>
+                  One of those people who makes life
+                  a little brighter.
+                </p>
+
+                <span class="friend-heart">♥</span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= MEMORY DIVIDER ================= -->
+
+    <section class="memory-divider">
+
+      <div class="container text-center reveal">
+
+        <div class="divider-line"></div>
+
+        <div class="divider-heart">
+          ♥
+        </div>
+
+        <h2>
+          And then there are the moments...
+        </h2>
+
+        <p>
+          ...that are better experienced than photographed.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= VIDEOS ================= -->
+
+    <section class="videos-section">
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <p>Press play on the memories</p>
+
+          <h2>
+            Memorable Videos 🎥
+          </h2>
+
+          <span>
+            Little moments that deserve another replay.
+          </span>
+
+        </div>
+
+
+        <div class="row g-4">
+
+
+          <!-- VIDEO 1 -->
+
+          <div class="col-12 col-md-6">
+
+            <div class="video-card reveal">
+
+              <div class="video-wrapper">
+
+                <video
+                  class="memory-video"
+                  controls
+                  preload="none"
+                  playsinline
+                  poster="images/friend1.jpg"
+                >
+                  <source
+                    src="videos/memory1.mp4"
+                    type="video/mp4"
+                  >
+
+                  Your browser does not support video.
+                </video>
+
+              </div>
+
+              <div class="video-info">
+
+                <h3>
+                  That One Crazy Day 😂
+                </h3>
+
+                <p>
+                  A moment that was never supposed to become
+                  a memory... but somehow did.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- VIDEO 2 -->
+
+          <div class="col-12 col-md-6">
+
+            <div class="video-card reveal">
+
+              <div class="video-wrapper">
+
+                <video
+                  class="memory-video"
+                  controls
+                  preload="none"
+                  playsinline
+                  poster="images/friend2.jpg"
+                >
+                  <source
+                    src="videos/memory2.mp4"
+                    type="video/mp4"
+                  >
+
+                  Your browser does not support video.
+                </video>
+
+              </div>
+
+              <div class="video-info">
+
+                <h3>
+                  Laughs We Can't Forget ❤️
+                </h3>
+
+                <p>
+                  Some laughs are impossible to explain.
+                  You simply had to be there.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- VIDEO 3 -->
+
+          <div class="col-12 col-md-6">
+
+            <div class="video-card reveal">
+
+              <div class="video-wrapper">
+
+                <video
+                  class="memory-video"
+                  controls
+                  preload="none"
+                  playsinline
+                  poster="images/friend3.jpg"
+                >
+                  <source
+                    src="videos/memory3.mp4"
+                    type="video/mp4"
+                  >
+
+                  Your browser does not support video.
+                </video>
+
+              </div>
+
+              <div class="video-info">
+
+                <h3>
+                  Just Us Being Us 🌸
+                </h3>
+
+                <p>
+                  No posing. No planning.
+                  Just a genuine little moment.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- VIDEO 4 -->
+
+          <div class="col-12 col-md-6">
+
+            <div class="video-card reveal">
+
+              <div class="video-wrapper">
+
+                <video
+                  class="memory-video"
+                  controls
+                  preload="none"
+                  playsinline
+                  poster="images/friend4.jpg"
+                >
+                  <source
+                    src="videos/memory4.mp4"
+                    type="video/mp4"
+                  >
+
+                  Your browser does not support video.
+                </video>
+
+              </div>
+
+              <div class="video-info">
+
+                <h3>
+                  A Moment Worth Replaying ✨
+                </h3>
+
+                <p>
+                  Because some moments never get old,
+                  no matter how many times we watch them.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= TIMELINE ================= -->
+
+    <section class="timeline-section">
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <p>A few chapters</p>
+
+          <h2>
+            Our Little Story 📖
+          </h2>
+
+        </div>
+
+
+        <div class="timeline">
+
+
+          <div class="timeline-item reveal">
+
+            <div class="timeline-dot">
+              ♥
+            </div>
+
+            <div class="timeline-content">
+
+              <span>
+                Chapter 01
+              </span>
+
+              <h3>
+                The Beginning 🌸
+              </h3>
+
+              <p>
+                Every friendship has a beginning.
+                Sometimes we don't realize how special
+                that beginning will become.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="timeline-item reveal">
+
+            <div class="timeline-dot">
+              ♥
+            </div>
+
+            <div class="timeline-content">
+
+              <span>
+                Chapter 02
+              </span>
+
+              <h3>
+                The Crazy Days 😂
+              </h3>
+
+              <p>
+                The random plans, endless jokes,
+                unexpected adventures and memories
+                that nobody else would understand.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="timeline-item reveal">
+
+            <div class="timeline-dot">
+              ♥
+            </div>
+
+            <div class="timeline-content">
+
+              <span>
+                Chapter 03
+              </span>
+
+              <h3>
+                The Unforgettable Moments ❤️
+              </h3>
+
+              <p>
+                Years later, these little moments
+                become the stories we tell again and again.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="timeline-item reveal">
+
+            <div class="timeline-dot">
+              ♥
+            </div>
+
+            <div class="timeline-content">
+
+              <span>
+                Chapter 04
+              </span>
+
+              <h3>
+                To Be Continued... ✨
+              </h3>
+
+              <p>
+                The best part is that there are still
+                so many memories waiting to happen.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= FINAL MESSAGE ================= -->
+
+    <section class="friend-message">
+
+      <div class="container text-center">
+
+        <div class="message-box reveal">
+
+          <div class="big-heart">
+            ♥
+          </div>
+
+          <h2>
+            Keep making memories
+          </h2>
+
+          <p>
+            One day, we may look back at these photographs
+            and videos and realize that these were some of
+            the happiest moments of our lives.
+          </p>
+
+          <p>
+            So here's to more laughter,
+            more adventures, more random pictures,
+            more crazy videos...
+          </p>
+
+          <p class="last-line">
+            ...and many more beautiful memories together. ❤️
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= IMAGE MODAL ================= -->
+
+    <div
+      class="modal fade"
+      id="photoModal"
+      tabindex="-1"
+    >
+
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+
+        <div class="modal-content">
+
+          <div class="modal-header">
+
+            <h5
+              class="modal-title"
+              id="modalTitle"
+            >
+              Memory ❤️
+            </h5>
+
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+
+          </div>
+
+          <div class="modal-body text-center">
+
+            <img
+              id="modalImage"
+              src=""
+              alt="Memory"
+              class="modal-image"
+            />
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- Bootstrap JS -->
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    ></script>
+
+    <script src="friends.js"></script>
+
+  </body>
+</html>

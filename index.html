@@ -1,0 +1,1167 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="description" content="A beautiful birthday memory gallery" />
+
+    <title>Happy Birthday ❤️ | Memory Gallery</title>
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Main CSS -->
+
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- =====================================================
+       BIRTHDAY COUNTDOWN CSS
+  ====================================================== -->
+
+    <style>
+      .countdown-wrapper {
+        margin: 28px 0 32px;
+        text-align: center;
+      }
+
+      .countdown-title {
+        margin: 0 0 15px;
+        font-family: "Inter", sans-serif;
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #ffffff;
+        opacity: 0.9;
+      }
+
+      .countdown {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+      }
+      #dhana {
+        color: purple;
+      }
+      #nesi {
+        color: goldenrod;
+      }
+
+      .countdown-box {
+        min-width: 80px;
+        padding: 14px 10px;
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.1);
+
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+
+        transition:
+          transform 0.3s ease,
+          background 0.3s ease;
+      }
+
+      .countdown-box:hover {
+        transform: translateY(-6px);
+        background: rgba(255, 255, 255, 0.18);
+      }
+
+      .countdown-box span {
+        display: block;
+
+        font-family: "Cormorant Garamond", serif;
+        font-size: 40px;
+        font-weight: 700;
+
+        line-height: 1;
+
+        color: #ffffff;
+      }
+
+      .countdown-box small {
+        display: block;
+
+        margin-top: 8px;
+
+        font-family: "Inter", sans-serif;
+        font-size: 9px;
+        font-weight: 600;
+
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+
+        color: #ffffff;
+        opacity: 0.8;
+      }
+
+      /* Birthday reached */
+
+      .birthday-message {
+        display: none;
+
+        margin-top: 15px;
+
+        font-family: "Cormorant Garamond", serif;
+        font-size: 25px;
+        font-weight: 600;
+
+        color: #ffffff;
+      }
+
+      /* =====================================================
+       MOBILE COUNTDOWN
+    ====================================================== */
+
+      @media (max-width: 600px) {
+        .countdown-wrapper {
+          margin: 22px 0 28px;
+        }
+
+        .countdown-title {
+          font-size: 10px;
+          letter-spacing: 1.2px;
+          margin-bottom: 12px;
+        }
+
+        .countdown {
+          gap: 6px;
+        }
+
+        .countdown-box {
+          min-width: 64px;
+          padding: 11px 6px;
+          border-radius: 10px;
+        }
+
+        .countdown-box span {
+          font-size: 29px;
+        }
+
+        .countdown-box small {
+          margin-top: 6px;
+          font-size: 7px;
+          letter-spacing: 0.8px;
+        }
+
+        .birthday-message {
+          font-size: 21px;
+        }
+      }
+
+      @media (max-width: 380px) {
+        .countdown {
+          gap: 4px;
+        }
+
+        .countdown-box {
+          min-width: 58px;
+          padding: 10px 5px;
+        }
+
+        .countdown-box span {
+          font-size: 25px;
+        }
+
+        .countdown-box small {
+          font-size: 6px;
+        }
+      }
+
+      /* =====================================================
+         DOLL DECORATIONS
+      ====================================================== */
+
+      .doll-gallery {
+        position: relative;
+        max-width: 1180px;
+        margin: -5px auto 70px;
+        padding: 10px 28px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+      }
+
+      .doll-card {
+        position: relative;
+        height: 350px;
+        overflow: hidden;
+        border-radius: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        background: rgba(255, 255, 255, 0.08);
+        box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+        transform: translateY(0);
+        transition:
+          transform 0.45s ease,
+          box-shadow 0.45s ease;
+      }
+
+      .doll-card:nth-child(2) {
+        transform: translateY(28px) rotate(1deg);
+      }
+
+      .doll-card:nth-child(3) {
+        transform: translateY(5px) rotate(-1deg);
+      }
+
+      .doll-card:hover {
+        transform: translateY(-10px) rotate(0);
+        box-shadow: 0 28px 55px rgba(0, 0, 0, 0.28);
+      }
+
+      .doll-card img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        transition:
+          transform 0.7s ease,
+          filter 0.5s ease;
+      }
+
+      .doll-card:hover img {
+        transform: scale(1.08);
+        filter: saturate(1.15);
+      }
+
+      .doll-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          rgba(18, 8, 25, 0.78),
+          transparent 55%
+        );
+        pointer-events: none;
+      }
+
+      .doll-caption {
+        position: absolute;
+        z-index: 2;
+        left: 20px;
+        right: 20px;
+        bottom: 17px;
+        color: #fff;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 24px;
+        font-weight: 600;
+        text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+      }
+
+      .doll-caption span {
+        display: block;
+        margin-bottom: 3px;
+        font-family: "Inter", sans-serif;
+        font-size: 9px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        opacity: 0.75;
+      }
+
+      .floating-doll {
+        position: absolute;
+        z-index: 3;
+        width: 105px;
+        height: 135px;
+        padding: 7px;
+        border-radius: 55px 55px 45px 45px;
+        background: rgba(255, 255, 255, 0.16);
+        border: 1px solid rgba(255, 255, 255, 0.28);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(8px);
+        animation: dollFloat 5s ease-in-out infinite;
+        pointer-events: none;
+      }
+
+      .floating-doll img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: inherit;
+      }
+
+      .floating-doll.left {
+        left: 1.5%;
+        top: 18%;
+        transform: rotate(-8deg);
+      }
+
+      .floating-doll.right {
+        right: 1.5%;
+        bottom: 17%;
+        transform: rotate(8deg);
+        animation-delay: 1.2s;
+      }
+
+      @keyframes dollFloat {
+        0%,
+        100% {
+          margin-top: 0;
+        }
+        50% {
+          margin-top: -15px;
+        }
+      }
+
+      @media (max-width: 850px) {
+        .doll-gallery {
+          grid-template-columns: 1fr;
+          max-width: 620px;
+          margin-bottom: 50px;
+        }
+
+        .doll-card,
+        .doll-card:nth-child(2),
+        .doll-card:nth-child(3) {
+          height: 300px;
+          transform: none;
+        }
+
+        .floating-doll {
+          display: none;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .doll-gallery {
+          padding: 5px 18px;
+          gap: 16px;
+        }
+
+        .doll-card,
+        .doll-card:nth-child(2),
+        .doll-card:nth-child(3) {
+          height: 350px;
+        }
+
+        .doll-caption {
+          font-size: 21px;
+        }
+      }
+
+      /* =====================================================
+         FULL-BODY DOLL CUTOUT
+         Put doll-cutout.png inside the images folder.
+      ====================================================== */
+
+      .hero {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 3;
+      }
+
+      .hero-doll {
+        position: absolute;
+        z-index: 2;
+        right: 5%;
+        bottom: 0;
+        width: min(42vw, 520px);
+        height: 92%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        pointer-events: none;
+      }
+
+      .hero-doll img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center bottom;
+        filter: drop-shadow(0 20px 28px rgba(0, 0, 0, 0.28));
+        transform-origin: center bottom;
+        transition: transform 0.35s ease;
+      }
+
+      .hero-doll img:hover {
+        transform: scale(1.025);
+      }
+
+      /* Keep the left-side text clear of the doll */
+      .hero-content {
+        width: min(55%, 650px);
+      }
+
+      @media (max-width: 900px) {
+        .hero-doll {
+          right: -4%;
+          width: 48vw;
+          height: 78%;
+        }
+
+        .hero-content {
+          width: 58%;
+        }
+      }
+
+      @media (max-width: 700px) {
+        .hero {
+          min-height: 820px;
+        }
+
+        .hero-doll {
+          position: absolute;
+          right: 50%;
+          bottom: 35%;
+          transform: translateX(50%);
+          width: min(82vw, 430px);
+          height: 55%;
+          opacity: 0.38;
+        }
+
+        .hero-content {
+          width: 100%;
+          position: relative;
+          z-index: 4;
+        }
+      }
+      #seconds {
+        color: gold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- =====================================================
+     TINY CUTE FLOATING EMOJIS
+====================================================== -->
+
+    <div class="cute-particles" id="cuteParticles" aria-hidden="true"></div>
+    <!-- =====================================================
+       LOADER
+  ====================================================== -->
+
+    <div id="loader" class="loader">
+      <div class="loader-heart">♥</div>
+
+      <p>Loading our memories...</p>
+    </div>
+
+    <!-- Floating Hearts -->
+
+    <div class="floating-hearts" aria-hidden="true"></div>
+
+    <!-- =====================================================
+       HERO
+  ====================================================== -->
+
+    <header class="hero" id="home">
+      <!-- NAVBAR -->
+
+      <nav class="navbar">
+        <a href="#home" class="brand"> Our <span>Memories</span> </a>
+
+        <!-- Mobile menu button -->
+        <button class="menu-btn" id="menuBtn" type="button" aria-label="Open navigation menu" aria-expanded="false">☰</button>
+
+        <div class="nav-links" id="navLinks">
+          <a href="#memories">Memories</a>
+          <a href="#journey">Journey</a>
+          <a href="#letter">Letter</a>
+          <a href="friends.html">Friends ❤️</a>
+        </div>
+
+        <button class="music-btn" id="musicBtn">♫ <span>Music</span></button>
+      </nav>
+
+      <div class="hero-overlay"></div>
+
+      <!-- HERO CONTENT -->
+
+      <div class="hero-content">
+        <p class="eyebrow">A little surprise, made with love</p>
+
+        <h1>
+          Happy <span id="me">Birthday</span>,<br />
+
+          <span id="birthdayName"> Beautiful Soul </span>
+
+          <span class="heart"> ♥ </span>
+        </h1>
+
+        <p class="hero-text">
+          Every picture holds a memory. Every memory holds a story. And today,
+          we celebrate yours.
+        </p>
+
+        <!-- =================================================
+       BIRTHDAY COUNTDOWN
+  ================================================== -->
+
+        <div class="countdown-wrapper">
+          <p class="countdown-title">Counting down to your special day ✨</p>
+
+          <div class="countdown" id="countdown">
+            <!-- DAYS -->
+
+            <div class="countdown-box">
+              <span id="days"> 00 </span>
+
+              <small> Days </small>
+            </div>
+
+            <!-- HOURS -->
+
+            <div class="countdown-box">
+              <span id="hours"> 00 </span>
+
+              <small> Hours </small>
+            </div>
+
+            <!-- MINUTES -->
+
+            <div class="countdown-box">
+              <span id="minutes"> 00 </span>
+
+              <small> Minutes </small>
+            </div>
+
+            <!-- SECONDS -->
+
+            <div class="countdown-box">
+              <span id="seconds"> 00 </span>
+
+              <small> Seconds </small>
+            </div>
+          </div>
+
+          <!-- Birthday message -->
+
+          <div class="birthday-message" id="birthdayMessage">
+            🎉 Today is your special day! 🎂
+          </div>
+        </div>
+
+        <!-- OPEN MEMORIES -->
+
+        <a href="#memories" class="main-btn">
+          Open Your Memories
+
+          <span> ↓ </span>
+        </a>
+      </div>
+
+      <!-- Full-body transparent doll -->
+      <div class="hero-doll" aria-hidden="true">
+        <img src="images/mekiey.png" alt="" />
+      </div>
+
+      <div class="scroll-note">Scroll to explore</div>
+    </header>
+
+    <!-- =====================================================
+       MAIN
+  ====================================================== -->
+
+    <div class="floating-doll left" aria-hidden="true">
+      <img
+        src="https://images.unsplash.com/photo-1480308180327-3ab2c310808f?auto=format&fit=crop&w=500&q=80"
+        alt=""
+      />
+    </div>
+
+    <div class="floating-doll right" aria-hidden="true">
+      <img
+        src="https://images.unsplash.com/photo-1616696269031-2eff6e768d75?auto=format&fit=crop&w=500&q=80"
+        alt=""
+      />
+    </div>
+
+    <main>
+      <!-- =================================================
+     INTRO
+================================================== -->
+
+      <section class="intro section">
+        <div class="section-label">01 / A collection of moments</div>
+
+        <h2>
+          Some moments deserve<br />
+
+          <em> to live forever. </em>
+        </h2>
+
+        <p class="intro-text">
+          From the smallest smiles to the biggest adventures, these are the
+          moments that make the journey unforgettable.
+        </p>
+      </section>
+
+      <!-- =================================================
+           LITTLE DOLL MOMENTS
+      ================================================== -->
+
+      <section class="doll-gallery" aria-label="Cute doll decorations">
+        <article class="doll-card" id="oo1">
+          <img
+            src="images/img1.png"
+            alt="Cute decorative doll"
+            loading="lazy"
+          />
+          <div class="doll-caption">
+            <span>For you ...!</span>
+            Happy Birthday Mekiey ♥
+          </div>
+        </article>
+
+        <article class="doll-card">
+          <img src="images/img2.png" alt="Beautiful doll" loading="lazy" />
+          <div class="doll-caption">
+            <span>For me ...,</span>
+            Hey Dhana ku Okay Sollu ✨
+          </div>
+        </article>
+
+        <article class="doll-card">
+          <img src="images/img3.png" alt="Doll collection" loading="lazy" />
+          <div class="doll-caption">
+            <span>For us |</span>
+            Are You Remember Us ?
+          </div>
+        </article>
+      </section>
+
+      <!-- =================================================
+     MEMORIES
+================================================== -->
+
+      <section class="gallery-section section" id="memories">
+        <div class="section-head">
+          <div>
+            <div class="section-label">02 / Memories</div>
+
+            <h2>Captured <em>moments</em></h2>
+          </div>
+
+          <p>Tap any photo to see it beautifully.</p>
+        </div>
+
+        <!-- FILTERS -->
+
+        <div class="filters" role="tablist">
+          <button class="filter active" data-filter="all">All</button>
+
+          <button class="filter" data-filter="smiles">Smiles</button>
+
+          <button class="filter" data-filter="adventures">Adventures</button>
+
+          <button class="filter" data-filter="favorites">Favorites</button>
+        </div>
+
+        <!-- =================================================
+       PHOTO GALLERY
+  ================================================== -->
+
+        <div class="gallery" id="gallery">
+          <article class="photo-card tall" data-category="smiles favorites">
+            <img src="images/photo1.jpeg" alt="Birthday memory 1" />
+
+            <div class="photo-info">
+              <span> 01 </span>
+
+              <h3>A beautiful smile</h3>
+            </div>
+          </article>
+
+          <article class="photo-card" data-category="adventures">
+            <img src="images/photo2.jpeg" alt="Birthday memory 2" />
+
+            <div class="photo-info">
+              <span> 02 </span>
+
+              <h3>Little adventures</h3>
+            </div>
+          </article>
+
+          <article class="photo-card wide" data-category="favorites">
+            <img src="images/photo3.jpeg" alt="Birthday memory 3" />
+
+            <div class="photo-info">
+              <span> 03 </span>
+
+              <h3>One for the album</h3>
+            </div>
+          </article>
+
+          <article class="photo-card" data-category="smiles">
+            <img src="images/photo4.jpeg" alt="Birthday memory 4" />
+
+            <div class="photo-info">
+              <span> 04 </span>
+
+              <h3>That happy moment</h3>
+            </div>
+          </article>
+
+          <article class="photo-card tall" data-category="adventures favorites">
+            <img src="images/photo5.jpeg" alt="Birthday memory 5" />
+
+            <div class="photo-info">
+              <span> 05 </span>
+
+              <h3>Good times</h3>
+            </div>
+          </article>
+
+          <article class="photo-card" data-category="smiles">
+            <img src="images/photo7.jpeg" alt="Birthday memory 6" />
+
+            <div class="photo-info">
+              <span> 06 </span>
+
+              <h3>Pure happiness</h3>
+            </div>
+          </article>
+
+          <article class="photo-card" data-category="adventures">
+            <img src="images/photo6.jpeg" alt="Birthday memory 7" />
+
+            <div class="photo-info">
+              <span> 07 </span>
+
+              <h3>Beautiful places</h3>
+            </div>
+          </article>
+
+          <article class="photo-card" data-category="favorites">
+            <img src="images/photo8.jpeg" alt="Birthday memory 8" />
+
+            <div class="photo-info">
+              <span> 08 </span>
+
+              <h3>A favorite memory</h3>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- =================================================
+     QUOTE
+================================================== -->
+
+      <section class="quote-section">
+        <div class="quote-mark">“</div>
+
+        <blockquote>
+          Life becomes beautiful when we collect moments, not things.
+        </blockquote>
+
+        <p>— With love, always</p>
+      </section>
+
+      <!-- =================================================
+     JOURNEY
+================================================== -->
+
+      <section class="journey section" id="journey">
+        <div class="section-label">03 / Our journey</div>
+
+        <h2>A story told in <em>moments</em></h2>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot">01</div>
+
+            <div class="timeline-content">
+              <small> THE BEGINNING </small>
+
+              <h3>The first memory</h3>
+
+              <p>
+                Every beautiful story starts somewhere. This was the beginning
+                of memories worth keeping.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot">02</div>
+
+            <div class="timeline-content">
+              <small> THE LITTLE THINGS </small>
+
+              <h3>Smiles & laughter</h3>
+
+              <p>
+                The random pictures, silly moments, long conversations and
+                unforgettable laughs.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot">03</div>
+
+            <div class="timeline-content">
+              <small> THE ADVENTURES </small>
+
+              <h3>Places & experiences</h3>
+
+              <p>
+                New places, new memories and stories that become favorites over
+                time...Snehatheeram Beach__Malampuzha Dam.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot">04</div>
+
+            <div class="timeline-content">
+              <small> TODAY </small>
+
+              <h3>A new chapter begins</h3>
+
+              <p>
+                Another year, another chapter, and countless beautiful moments
+                still waiting to happen.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================
+     LETTER
+================================================== -->
+
+      <section class="letter-section section" id="letter">
+        <div class="letter-wrap">
+          <div class="section-label">04 / A little letter</div>
+
+          <h2>For <em>you</em></h2>
+
+          <div class="letter-card">
+            <div class="letter-top">♥</div>
+
+            <p class="letter-greeting">
+              Dear
+              <span id="letterName"> you </span>,
+            </p>
+
+            <p>
+              Today is a reminder of how special you are. I hope this new year
+              of your life brings you peaceful days, genuine smiles, exciting
+              adventures and everything your heart has been wishing for.
+            </p>
+
+            <p>
+              Thank you for being part of so many beautiful memories. The photos
+              on this page may capture moments, but they can never capture how
+              much those moments mean.
+            </p>
+
+            <p>
+              Keep smiling. Keep dreaming. Keep being the wonderful person you
+              are.
+            </p>
+
+            <p>
+              <mark style="background-color: rgb(137, 106, 166); padding:0px 5px 0px 5px; border-radius: 2px;">-<del>I think you are my Oxygen, I can't live without you...!</del></mark>
+            </p>
+
+            <p class="signature">Happy Birthday, with lots of love ♥</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================
+     SURPRISE
+================================================== -->
+
+      <section class="surprise-section">
+        <div class="surprise-content">
+          <div class="gift-icon">🎁</div>
+
+          <p class="eyebrow">One last surprise</p>
+
+          <h2>
+            There is something<br />
+
+            <em> waiting for you... </em>
+          </h2>
+
+          <button class="main-btn" id="surpriseBtn">
+            Open the Surprise ✨
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+    <footer>
+      <div class="footer-heart">♥</div>
+
+      <h2>Made with love</h2>
+
+      <p>For a birthday that deserves to be remembered.</p>
+
+      <small>
+        ©
+        <span id="year"></span>
+        Memory Gallery
+      </small>
+    </footer>
+
+    <!-- =====================================================
+       LIGHTBOX
+  ====================================================== -->
+
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <button
+        class="lightbox-close"
+        id="lightboxClose"
+        aria-label="Close photo"
+      >
+        ×
+      </button>
+
+      <button
+        class="lightbox-prev"
+        id="lightboxPrev"
+        aria-label="Previous photo"
+      >
+        ‹
+      </button>
+
+      <div class="lightbox-inner">
+        <img id="lightboxImg" src="" alt="" />
+
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+      </div>
+
+      <button class="lightbox-next" id="lightboxNext" aria-label="Next photo">
+        ›
+      </button>
+    </div>
+
+    <!-- =====================================================
+       SURPRISE MODAL
+  ====================================================== -->
+
+    <div class="surprise-modal" id="surpriseModal" aria-hidden="true">
+      <div class="surprise-box">
+        <button class="modal-close" id="modalClose">×</button>
+
+        <div class="big-heart"><img src="https://images.emojiterra.com/google/noto-emoji/animated-emoji/1fac0.gif" alt=""></div>
+
+        <h2>Love You Nesi ❤️</h2>
+
+        <p>
+          May this year give you a thousand reasons to smile, a hundred
+          beautiful memories and all the happiness you deserve.
+        </p>
+
+        <div class="cake">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="50"
+            height="50"
+            fill="currentColor"
+            class="bi bi-cake"
+            viewBox="0 0 16 16"
+            id="nesi"
+          >
+            <path
+              d="m7.994.013-.595.79a.747.747 0 0 0 .101 1.01V4H5a2 2 0 0 0-2 2v3H2a2 2 0 0 0-2 2v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4a2 2 0 0 0-2-2h-1V6a2 2 0 0 0-2-2H8.5V1.806A.747.747 0 0 0 8.592.802zM4 6a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v.414a.9.9 0 0 1-.646-.268 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0A.9.9 0 0 1 4 6.414zm0 1.414c.49 0 .98-.187 1.354-.56a.914.914 0 0 1 1.292 0c.748.747 1.96.747 2.708 0a.914.914 0 0 1 1.292 0c.374.373.864.56 1.354.56V9H4zM1 11a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.793l-.354.354a.914.914 0 0 1-1.293 0 1.914 1.914 0 0 0-2.707 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0L1 11.793zm11.646 1.854a1.915 1.915 0 0 0 2.354.279V15H1v-1.867c.737.452 1.715.36 2.354-.28a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.708 0a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.707 0a.914.914 0 0 1 1.293 0Z"
+            />
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="50"
+            height="50"
+            fill="currentColor"
+            class="bi bi-balloon-heart"
+            viewBox="0 0 16 16"
+            id="dhana"
+          >
+            <path
+              fill-rule="evenodd"
+              d="m8 2.42-.717-.737c-1.13-1.161-3.243-.777-4.01.72-.35.685-.451 1.707.236 3.062C4.16 6.753 5.52 8.32 8 10.042c2.479-1.723 3.839-3.29 4.491-4.577.687-1.355.587-2.377.236-3.061-.767-1.498-2.88-1.882-4.01-.721zm-.49 8.5c-10.78-7.44-3-13.155.359-10.063q.068.062.132.129.065-.067.132-.129c3.36-3.092 11.137 2.624.357 10.063l.235.468a.25.25 0 1 1-.448.224l-.008-.017c.008.11.02.202.037.29.054.27.161.488.419 1.003.288.578.235 1.15.076 1.629-.157.469-.422.867-.588 1.115l-.004.007a.25.25 0 1 1-.416-.278c.168-.252.4-.6.533-1.003.133-.396.163-.824-.049-1.246l-.013-.028c-.24-.48-.38-.758-.448-1.102a3 3 0 0 1-.052-.45l-.04.08a.25.25 0 1 1-.447-.224l.235-.468ZM6.013 2.06c-.649-.18-1.483.083-1.85.798-.131.258-.245.689-.08 1.335.063.244.414.198.487-.043.21-.697.627-1.447 1.359-1.692.217-.073.304-.337.084-.398"
+            />
+          </svg>
+        </div>
+
+        <button class="main-btn" id="celebrateBtn">Celebrate! 🎉</button>
+      </div>
+    </div>
+
+    <!-- =====================================================
+       MUSIC
+  ====================================================== -->
+
+    <audio id="birthdayMusic" preload="auto">
+      <source src="images/music3.mp3" type="audio/mpeg" />
+    </audio>
+
+    <!-- =====================================================
+       MAIN SCRIPT
+  ====================================================== -->
+
+    <script src="script.js"></script>
+
+    <!-- =====================================================
+       RESPONSIVE NAVBAR JAVASCRIPT
+  ====================================================== -->
+    <script>
+      const menuBtn = document.getElementById("menuBtn");
+      const navLinks = document.getElementById("navLinks");
+
+      if (menuBtn && navLinks) {
+        menuBtn.addEventListener("click", () => {
+          const isOpen = navLinks.classList.toggle("active");
+
+          menuBtn.setAttribute("aria-expanded", String(isOpen));
+          menuBtn.setAttribute(
+            "aria-label",
+            isOpen ? "Close navigation menu" : "Open navigation menu"
+          );
+          menuBtn.textContent = isOpen ? "×" : "☰";
+        });
+
+        navLinks.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            navLinks.classList.remove("active");
+            menuBtn.setAttribute("aria-expanded", "false");
+            menuBtn.setAttribute("aria-label", "Open navigation menu");
+            menuBtn.textContent = "☰";
+          });
+        });
+
+        window.addEventListener("resize", () => {
+          if (window.innerWidth > 768) {
+            navLinks.classList.remove("active");
+            menuBtn.setAttribute("aria-expanded", "false");
+            menuBtn.setAttribute("aria-label", "Open navigation menu");
+            menuBtn.textContent = "☰";
+          }
+        });
+      }
+    </script>
+
+    <!-- =====================================================
+       BIRTHDAY COUNTDOWN JAVASCRIPT
+  ====================================================== -->
+
+    <script>
+      /*
+    =========================================================
+    BIRTHDAY COUNTDOWN
+
+    Birthday:
+    October 1, 2026
+    Time:
+    12:00 AM
+
+    India Standard Time (IST)
+    =========================================================
+    */
+
+      const birthdayDate = new Date("October 1, 2026 00:00:00").getTime();
+
+      const countdownTimer = setInterval(function () {
+        // Current date and time
+
+        const now = new Date().getTime();
+
+        // Difference between birthday and now
+
+        const difference = birthdayDate - now;
+
+        // =================================================
+        // CALCULATE DAYS
+        // =================================================
+
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+
+        // =================================================
+        // CALCULATE HOURS
+        // =================================================
+
+        const hours = Math.floor(
+          (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+        );
+
+        // =================================================
+        // CALCULATE MINUTES
+        // =================================================
+
+        const minutes = Math.floor(
+          (difference % (1000 * 60 * 60)) / (1000 * 60),
+        );
+
+        // =================================================
+        // CALCULATE SECONDS
+        // =================================================
+
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        // =================================================
+        // DISPLAY COUNTDOWN
+        // =================================================
+
+        if (difference > 0) {
+          document.getElementById("days").textContent = String(days).padStart(
+            2,
+            "0",
+          );
+
+          document.getElementById("hours").textContent = String(hours).padStart(
+            2,
+            "0",
+          );
+
+          document.getElementById("minutes").textContent = String(
+            minutes,
+          ).padStart(2, "0");
+
+          document.getElementById("seconds").textContent = String(
+            seconds,
+          ).padStart(2, "0");
+        }
+
+        // =================================================
+        // BIRTHDAY HAS ARRIVED
+        // =================================================
+        else {
+          clearInterval(countdownTimer);
+
+          document.getElementById("days").textContent = "00";
+
+          document.getElementById("hours").textContent = "00";
+
+          document.getElementById("minutes").textContent = "00";
+
+          document.getElementById("seconds").textContent = "00";
+
+          document.querySelector(".countdown-title").style.display = "none";
+
+          document.getElementById("birthdayMessage").style.display = "block";
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>

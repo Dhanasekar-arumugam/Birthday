@@ -1,0 +1,862 @@
+
+/* =========================
+   RESET
+   ========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #080808;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+
+/* =========================
+   NAVBAR
+   ========================= */
+
+.custom-navbar {
+  background: rgba(0, 0, 0, 0.96);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 15px 0;
+
+  position: relative;
+  z-index: 100;
+}
+
+.navbar-brand {
+  font-family: "Pacifico", cursive;
+  font-size: 24px;
+  color: white !important;
+}
+
+.nav-link {
+  color: white !important;
+  margin-left: 20px;
+  transition: 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #ff8fab !important;
+}
+
+
+/* =========================
+   HERO
+   ========================= */
+
+.memory-hero {
+  min-height: 600px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 100px 20px;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(255, 92, 138, 0.18),
+      transparent 55%
+    );
+}
+
+.small-title {
+  color: #ff8fab;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.memory-hero h1 {
+  font-family: "Pacifico", cursive;
+  font-size: clamp(42px, 7vw, 78px);
+  margin-bottom: 25px;
+}
+
+.hero-text {
+  max-width: 650px;
+  margin: auto;
+
+  color: #cfcfcf;
+
+  line-height: 1.9;
+  font-size: 15px;
+}
+
+.scroll-heart {
+  color: #ff5c8a;
+  font-size: 40px;
+
+  margin-top: 35px;
+
+  animation: heartbeat 1.5s infinite;
+}
+
+.scroll-text {
+  color: #777;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+
+@keyframes heartbeat {
+
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+
+}
+
+
+/* =========================
+   INTRO
+   ========================= */
+
+.memory-intro {
+  padding: 100px 20px;
+}
+
+.intro-box {
+  max-width: 800px;
+  margin: auto;
+
+  text-align: center;
+
+  padding: 60px 40px;
+
+  background: #101010;
+
+  border-radius: 30px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.quote-mark {
+  font-family: Georgia, serif;
+  font-size: 70px;
+  color: #ff5c8a;
+  line-height: 0.5;
+}
+
+.intro-box h2 {
+  
+  font-family: "Pacifico", cursive;
+
+  font-size: clamp(25px, 4vw, 38px);
+
+  margin: 40px 0;
+}
+
+.intro-box p {
+  color: #aaa;
+
+  line-height: 1.9;
+
+  max-width: 650px;
+
+  margin: auto;
+}
+
+.quote-end {
+  display: block;
+  margin-top: 25px;
+}
+
+
+/* =========================
+   SECTION HEADING
+   ========================= */
+
+.section-heading {
+  text-align: center;
+
+  margin-bottom: 60px;
+}
+
+.section-heading p {
+  color: #ff8fab;
+
+  font-size: 12px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 3px;
+
+  margin-bottom: 12px;
+}
+
+.section-heading h2 {
+  font-family: "Pacifico", cursive;
+
+  font-size: clamp(30px, 5vw, 50px);
+
+  margin-bottom: 15px;
+}
+
+.section-heading span {
+  color: #777;
+
+  font-size: 14px;
+}
+
+
+/* =========================
+   FRIEND SECTION
+   ========================= */
+
+.friends-section {
+  padding: 80px 0 120px;
+}
+
+
+/* =========================
+   FRIEND CARD
+   ========================= */
+
+.friend-card {
+  background: #111;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 25px;
+
+  overflow: hidden;
+
+  height: 100%;
+
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
+}
+
+.friend-card:hover {
+  transform: translateY(-10px);
+
+  box-shadow:
+    0 20px 60px rgba(255, 92, 138, 0.18);
+}
+
+
+/* =========================
+   IMAGE
+   ========================= */
+
+.image-container {
+  position: relative;
+
+  width: 100%;
+
+  height: 400px;
+
+  overflow: hidden;
+
+  background: #050505;
+}
+
+.friend-image {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition: transform 0.8s ease;
+}
+
+.friend-card:hover .friend-image {
+  transform: scale(1.06);
+}
+
+
+/* =========================
+   IMAGE OVERLAY
+   ========================= */
+
+.image-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.5);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+
+  transition: 0.4s;
+}
+
+.friend-card:hover .image-overlay {
+  opacity: 1;
+}
+
+.view-btn {
+  border: 1px solid white;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  color: white;
+
+  padding: 11px 24px;
+
+  border-radius: 30px;
+
+  backdrop-filter: blur(5px);
+
+  transition: 0.3s;
+}
+
+.view-btn:hover {
+  background: white;
+
+  color: black;
+}
+
+
+/* =========================
+   FRIEND INFO
+   ========================= */
+
+.friend-info {
+  position: relative;
+
+  padding: 25px;
+}
+
+.friend-info h3 {
+  color: #ff8fab;
+
+  font-size: 21px;
+
+  margin-bottom: 10px;
+}
+
+.friend-info p {
+  color: #aaa;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+
+  margin: 0;
+
+  padding-right: 20px;
+}
+
+.friend-heart {
+  position: absolute;
+
+  right: 25px;
+  top: 25px;
+
+  color: #ff5c8a;
+
+  font-size: 20px;
+}
+
+
+/* =========================
+   SCROLL REVEAL
+   ========================= */
+
+.reveal {
+  opacity: 0;
+
+  transform: translateY(70px);
+
+  transition:
+    opacity 1s ease,
+    transform 1s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+/* =========================
+   MEMORY DIVIDER
+   ========================= */
+
+.memory-divider {
+  padding: 100px 20px;
+}
+
+.divider-line {
+  width: 100px;
+
+  height: 1px;
+
+  background: #333;
+
+  margin: auto;
+}
+
+.divider-heart {
+  color: #ff5c8a;
+
+  font-size: 35px;
+
+  margin: 25px 0;
+}
+
+.memory-divider h2 {
+  font-family: "Pacifico", cursive;
+
+  font-size: clamp(28px, 5vw, 45px);
+}
+
+.memory-divider p {
+  color: #777;
+
+  margin-top: 15px;
+}
+
+
+/* =========================
+   VIDEO SECTION
+   ========================= */
+
+.videos-section {
+  padding: 80px 0 120px;
+
+  background:
+    linear-gradient(
+      rgba(255, 92, 138, 0.025),
+      rgba(255, 92, 138, 0.025)
+    );
+}
+
+.video-card {
+  background: #111;
+
+  border-radius: 25px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  transition: 0.5s;
+}
+
+.video-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 20px 60px rgba(255, 92, 138, 0.15);
+}
+
+.video-wrapper {
+  position: relative;
+
+  width: 100%;
+
+  background: #000;
+
+  overflow: hidden;
+}
+
+.memory-video {
+  display: block;
+
+  width: 100%;
+
+  aspect-ratio: 16 / 9;
+
+  object-fit: cover;
+
+  background: black;
+}
+
+.video-info {
+  padding: 25px;
+}
+
+.video-info h3 {
+  color: #ff8fab;
+
+  font-size: 20px;
+
+  margin-bottom: 10px;
+}
+
+.video-info p {
+  color: #aaa;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+
+  margin: 0;
+}
+
+
+/* =========================
+   TIMELINE
+   ========================= */
+
+.timeline-section {
+  padding: 120px 20px;
+}
+
+.timeline {
+  max-width: 800px;
+
+  margin: auto;
+
+  position: relative;
+}
+
+.timeline::before {
+  content: "";
+
+  position: absolute;
+
+  left: 25px;
+
+  top: 0;
+  bottom: 0;
+
+  width: 1px;
+
+  background: #333;
+}
+
+.timeline-item {
+  position: relative;
+
+  padding-left: 80px;
+
+  margin-bottom: 70px;
+}
+
+.timeline-dot {
+  position: absolute;
+
+  left: 8px;
+
+  top: 0;
+
+  width: 35px;
+  height: 35px;
+
+  border-radius: 50%;
+
+  background: #111;
+
+  border: 1px solid #ff5c8a;
+
+  color: #ff5c8a;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 14px;
+}
+
+.timeline-content {
+  background: #111;
+
+  padding: 30px;
+
+  border-radius: 20px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.timeline-content span {
+  color: #ff8fab;
+
+  font-size: 11px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 2px;
+}
+
+.timeline-content h3 {
+  margin: 10px 0;
+
+  font-size: 22px;
+}
+
+.timeline-content p {
+  color: #999;
+
+  line-height: 1.8;
+
+  margin: 0;
+}
+
+
+/* =========================
+   FINAL MESSAGE
+   ========================= */
+
+.friend-message {
+  padding: 30px 20px 120px;
+}
+
+.message-box {
+  max-width: 800px;
+
+  margin: auto;
+
+  padding: 70px 40px;
+
+  border-radius: 35px;
+
+  background: #111;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.big-heart {
+  color: #ff5c8a;
+
+  font-size: 50px;
+
+  margin-bottom: 20px;
+
+  animation: heartbeat 1.5s infinite;
+}
+
+.message-box h2 {
+  font-family: "Pacifico", cursive;
+
+  font-size: clamp(30px, 5vw, 45px);
+
+  margin-bottom: 25px;
+}
+
+.message-box p {
+  color: #aaa;
+
+  line-height: 1.9;
+
+  max-width: 650px;
+
+  margin: 15px auto;
+}
+
+.last-line {
+  color: #ff8fab !important;
+
+  font-size: 17px;
+}
+
+
+/* =========================
+   MODAL
+   ========================= */
+
+.modal-content {
+  background: #111;
+
+  color: white;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+}
+
+.modal-header {
+  border-bottom: 1px solid #333;
+}
+
+.modal-title {
+  color: #ff8fab;
+}
+
+.modal-image {
+  max-width: 100%;
+
+  max-height: 75vh;
+
+  object-fit: contain;
+
+  border-radius: 10px;
+}
+
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media (max-width: 900px) {
+
+  .memory-hero {
+    min-height: 500px;
+  }
+
+  .image-container {
+    height: 310px;
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 600px) {
+
+  .custom-navbar {
+    padding: 10px 15px;
+  }
+
+  .navbar-brand {
+    font-size: 20px;
+  }
+
+  .nav-link {
+    margin-left: 0;
+
+    padding: 10px 0;
+  }
+
+  .memory-hero {
+    min-height: 500px;
+
+    padding: 70px 20px;
+  }
+
+  .memory-hero h1 {
+    font-size: 42px;
+  }
+
+  .hero-text {
+    font-size: 14px;
+  }
+
+  .memory-intro {
+    padding: 60px 20px;
+  }
+
+  .intro-box {
+    padding: 45px 25px;
+  }
+
+  .friends-section {
+    padding: 60px 15px 90px;
+  }
+
+  .image-container {
+    height: 330px;
+  }
+
+  .memory-divider {
+    padding: 70px 20px;
+  }
+
+  .videos-section {
+    padding: 70px 15px 90px;
+  }
+
+  .video-info {
+    padding: 20px;
+  }
+
+  .timeline-section {
+    padding: 80px 20px;
+  }
+
+  .timeline-item {
+    padding-left: 65px;
+  }
+
+  .message-box {
+    padding: 50px 25px;
+  }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+   ========================= */
+
+@media (max-width: 400px) {
+
+  .memory-hero h1 {
+    font-size: 35px;
+  }
+
+  .image-container {
+    height: 280px;
+  }
+
+  .friend-info {
+    padding: 20px;
+  }
+
+  .friend-info h3 {
+    font-size: 19px;
+  }
+
+  .intro-box h2 {
+    font-size: 25px;
+  }
+
+  .timeline-item {
+    padding-left: 55px;
+  }
+
+}
+
+.intro-box{
+  position: relative;
+  background-color: black;
+  padding: 40px;
+  border-radius: 25px;
+  box-sizing: border-box;
+  overflow: hidden;
+
+}
+.intro-box::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: url("images/frie.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% auto;
+  
+  opacity: 0.25;
+  z-index: 1;
+  transform: rotate(0deg);
+
+}
