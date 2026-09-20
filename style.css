@@ -1249,12 +1249,12 @@ blockquote {
   background:
     radial-gradient(
       circle at top right,
-      rgba(231, 180, 92, 0.10),
+      rgba(231, 180, 92, 0.50),
       transparent 25%
     ),
     radial-gradient(
       circle at bottom left,
-      rgba(255, 143, 171, 0.06),
+      rgba(255, 143, 171, 0.5),
       transparent 25%
     ),
     #171012;
@@ -1280,7 +1280,7 @@ blockquote {
 
   color: var(--pink);
 
-  opacity: 0.18;
+  opacity: 0.58;
 
   font-size: 35px;
 
@@ -2444,7 +2444,7 @@ footer small {
   background-position: center;
   background-size: 70% auto;
   
-  opacity: 0.25;
+  opacity: 0.55;
   z-index: 1;
   transform: rotate(0deg);
 }
@@ -2471,7 +2471,7 @@ footer small {
   .letter-card::before {
     background-size: 75% auto;
     background-position: center;
-    opacity: 0.22;
+    opacity: 0.50;
   }
 }
 
