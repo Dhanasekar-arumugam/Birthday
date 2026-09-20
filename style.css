@@ -2471,7 +2471,7 @@ footer small {
   .letter-card::before {
     background-size: 75% auto;
     background-position: center;
-    opacity: 0.22;
+    opacity: 0.50;
   }
 }
 
