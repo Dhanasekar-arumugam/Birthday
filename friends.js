@@ -1,140 +1,315 @@
 
-/* =========================
+/* =====================================================
+   HER PEOPLE - SCRAPBOOK JAVASCRIPT
+===================================================== */
+
+
+/* =====================================================
    SCROLL REVEAL
-   ========================= */
+===================================================== */
 
-const revealElements = document.querySelectorAll(".reveal");
+const revealElements =
+    document.querySelectorAll(".reveal");
 
-const revealObserver = new IntersectionObserver(
-  (entries) => {
 
-    entries.forEach((entry) => {
+const revealObserver =
+    new IntersectionObserver(
+        (entries) => {
 
-      if (entry.isIntersecting) {
+            entries.forEach((entry) => {
 
-        entry.target.classList.add("show");
+                if (entry.isIntersecting) {
 
-        // Once revealed, stop observing it
-        revealObserver.unobserve(entry.target);
+                    entry.target.classList.add("show");
 
-      }
+                    revealObserver.unobserve(
+                        entry.target
+                    );
 
-    });
+                }
 
-  },
-  {
-    threshold: 0.15,
-    rootMargin: "0px 0px -50px 0px"
-  }
-);
+            });
+
+        },
+        {
+            threshold: 0.12,
+            rootMargin: "0px 0px -40px 0px"
+        }
+    );
 
 
 revealElements.forEach((element) => {
-  revealObserver.observe(element);
+
+    revealObserver.observe(element);
+
 });
 
 
-/* =========================
+/* =====================================================
    IMAGE MODAL
-   ========================= */
+===================================================== */
 
 function openImage(imagePath, title) {
 
-  const modalImage =
-    document.getElementById("modalImage");
+    const modalElement =
+        document.getElementById("photoModal");
 
-  const modalTitle =
-    document.getElementById("modalTitle");
+    const modalImage =
+        document.getElementById("modalImage");
 
-
-  modalImage.src = imagePath;
-
-  modalTitle.textContent = title;
+    const modalTitle =
+        document.getElementById("modalTitle");
 
 
-  const modalElement =
-    document.getElementById("photoModal");
+    if (
+        !modalElement ||
+        !modalImage ||
+        !modalTitle
+    ) {
+        return;
+    }
 
 
-  const modal =
-    new bootstrap.Modal(modalElement);
+    modalImage.src = imagePath;
+
+    modalImage.alt = title;
+
+    modalTitle.textContent = title;
 
 
-  modal.show();
+    const modal =
+        bootstrap.Modal.getOrCreateInstance(
+            modalElement
+        );
+
+
+    modal.show();
+
 }
 
 
-/* =========================
-   VIDEO AUTO PLAY WHEN VISIBLE
-   ========================= */
+/* =====================================================
+   CLEAR MODAL IMAGE
+===================================================== */
 
-const videos =
-  document.querySelectorAll(".memory-video");
-
-
-const videoObserver =
-  new IntersectionObserver(
-    (entries) => {
-
-      entries.forEach((entry) => {
-
-        const video = entry.target;
+const photoModal =
+    document.getElementById("photoModal");
 
 
-        if (entry.isIntersecting) {
+if (photoModal) {
 
-          /*
-             Video will NOT automatically play
-             with sound because browsers block
-             that behavior.
+    photoModal.addEventListener(
+        "hidden.bs.modal",
+        () => {
 
-             We only load it when it comes near
-             the screen.
-          */
+            const modalImage =
+                document.getElementById(
+                    "modalImage"
+                );
 
-          video.setAttribute("preload", "metadata");
+
+            if (modalImage) {
+
+                modalImage.src = "";
+
+            }
 
         }
+    );
 
-        else {
+}
 
-          // Pause when user scrolls away
-          if (!video.paused) {
-            video.pause();
-          }
+
+/* =====================================================
+   IMAGE LOAD EFFECT
+===================================================== */
+
+const galleryImages =
+    document.querySelectorAll(
+        ".polaroid img, .center-photo img"
+    );
+
+
+galleryImages.forEach((image) => {
+
+    image.addEventListener(
+        "load",
+        () => {
+
+            image.classList.add("loaded");
 
         }
+    );
 
-      });
-
-    },
-    {
-      threshold: 0.35
-    }
-  );
-
-
-videos.forEach((video) => {
-  videoObserver.observe(video);
 });
 
 
-/* =========================
-   CLOSE VIDEO WHEN MODAL
-   ========================= */
+/* =====================================================
+   SMALL PARALLAX EFFECT
+   DESKTOP ONLY
+===================================================== */
 
-const photoModal =
-  document.getElementById("photoModal");
+const scrapbookBoard =
+    document.querySelector(
+        ".scrapbook-board"
+    );
 
 
-photoModal.addEventListener(
-  "hidden.bs.modal",
-  function () {
+if (
+    scrapbookBoard &&
+    window.innerWidth > 767
+) {
 
-    const modalImage =
-      document.getElementById("modalImage");
+    let ticking = false;
 
-    modalImage.src = "";
 
-  }
+    window.addEventListener(
+        "scroll",
+        () => {
+
+            if (!ticking) {
+
+                window.requestAnimationFrame(
+                    () => {
+
+                        const rect =
+                            scrapbookBoard.getBoundingClientRect();
+
+
+                        const viewport =
+                            window.innerHeight;
+
+
+                        if (
+                            rect.top < viewport &&
+                            rect.bottom > 0
+                        ) {
+
+                            const progress =
+                                (
+                                    viewport - rect.top
+                                ) /
+                                (
+                                    viewport + rect.height
+                                );
+
+
+                            const center =
+                                document.querySelector(
+                                    ".center-memory"
+                                );
+
+
+                            if (center) {
+
+                                center.style.marginTop =
+                                    `${progress * 8}px`;
+
+                            }
+
+                        }
+
+
+                        ticking = false;
+
+                    }
+                );
+
+
+                ticking = true;
+
+            }
+
+        },
+        {
+            passive: true
+        }
+    );
+
+}
+
+
+/* =====================================================
+   PREVENT BROKEN IMAGE FEEL
+===================================================== */
+
+galleryImages.forEach((image) => {
+
+    image.addEventListener(
+        "error",
+        () => {
+
+            image.style.opacity = "0.35";
+
+        }
+    );
+
+});
+
+
+/* =====================================================
+   KEYBOARD ESCAPE
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    (event) => {
+
+        if (event.key === "Escape") {
+
+            const modal =
+                bootstrap.Modal.getInstance(
+                    photoModal
+                );
+
+
+            if (modal) {
+
+                modal.hide();
+
+            }
+
+        }
+
+    }
 );
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const cards = document.querySelectorAll(".photo-card");
+
+  const observer = new IntersectionObserver((entries, observer) => {
+
+    entries.forEach(entry => {
+
+      if (!entry.isIntersecting) return;
+
+      const card = entry.target;
+
+      const image = card.querySelector("img");
+      const wording = card.querySelector(".photo-info");
+
+      // Show photo
+      if (image) {
+        image.classList.add("photo-visible");
+      }
+
+      // Show wording slightly later
+      if (wording) {
+        setTimeout(() => {
+          wording.classList.add("wording-visible");
+        }, 500);
+      }
+
+      observer.unobserve(card);
+    });
+
+  }, {
+    threshold: 0.3
+  });
+
+  cards.forEach(card => {
+    observer.observe(card);
+  });
+
+});
