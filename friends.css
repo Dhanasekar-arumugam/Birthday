@@ -12946,3 +12946,1185 @@ font-size: 14px;
         width: 35px;
     }
 }
+/* =========================================================
+   RESPONSIVE SECTION BACKGROUND SYSTEM
+   Different background for every major section
+========================================================= */
+
+
+/* ---------------------------------------------------------
+   1. HERO / COVER
+--------------------------------------------------------- */
+
+.hero,
+.cover,
+.cover-section {
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(255, 220, 225, .75),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #fff7f4 0%,
+            #f9e9e8 50%,
+            #f4dddd 100%
+        );
+}
+
+
+/* ---------------------------------------------------------
+   2. INTRO NOTE
+--------------------------------------------------------- */
+
+.note-section {
+    background:
+        linear-gradient(
+            135deg,
+            #f8eee9,
+            #f3e4df
+        );
+}
+
+
+/* ---------------------------------------------------------
+   3. MEMORY HEADING
+--------------------------------------------------------- */
+
+.memory-heading {
+    background:
+        radial-gradient(
+            circle at 80% 30%,
+            rgba(235, 199, 203, .45),
+            transparent 35%
+        ),
+        #f7f1ec;
+}
+
+
+/* ---------------------------------------------------------
+   4. MAIN SCRAPBOOK GALLERY
+--------------------------------------------------------- */
+
+.scrapbook {
+    background:
+        linear-gradient(
+            135deg,
+            #eee6dc 0%,
+            #f7f0e8 45%,
+            #eee2d7 100%
+        );
+}
+
+
+/* ---------------------------------------------------------
+   5. VIDEO SECTION
+--------------------------------------------------------- */
+
+.memory-videos {
+    background:
+        radial-gradient(
+            circle at 10% 15%,
+            rgba(216, 188, 193, .35),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(236, 213, 195, .45),
+            transparent 35%
+        ),
+        #f3e9e5;
+}
+
+
+/* ---------------------------------------------------------
+   6. MEMORY DETAILS / STORY SECTION
+--------------------------------------------------------- */
+
+.memory-details {
+    background:
+        linear-gradient(
+            135deg,
+            #f8f4ee,
+            #ece7df
+        );
+}
+
+
+/* ---------------------------------------------------------
+   7. TIMELINE
+--------------------------------------------------------- */
+
+.memory-timeline,
+.timeline-section {
+    background:
+        linear-gradient(
+            180deg,
+            #eee7e1 0%,
+            #f7eee9 50%,
+            #eadfda 100%
+        );
+}
+
+
+/* ---------------------------------------------------------
+   8. MORE MEMORIES / EDITORIAL GALLERY
+--------------------------------------------------------- */
+
+.memory-film-section {
+    background:
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(227, 190, 196, .35),
+            transparent 30%
+        ),
+        #fffaf7;
+}
+
+
+/* ---------------------------------------------------------
+   9. EDITORIAL 6 PHOTO SECTION
+--------------------------------------------------------- */
+
+.editorial-section,
+.editorial-gallery {
+    background:
+        linear-gradient(
+            135deg,
+            #e8eef0 0%,
+            #f3f5f3 50%,
+            #e6e1dc 100%
+        );
+}
+
+
+/* ---------------------------------------------------------
+   10. FRIENDSHIP RULES
+--------------------------------------------------------- */
+
+.memory-rules {
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(215, 180, 185, .35),
+            transparent 32%
+        ),
+        linear-gradient(
+            135deg,
+            #f1e5e2,
+            #e8d9d5
+        );
+}
+
+
+/* ---------------------------------------------------------
+   11. LITTLE MEMORY STRIP
+--------------------------------------------------------- */
+
+.memory-strip {
+    background:
+        linear-gradient(
+            135deg,
+            #d9c9c0,
+            #e8d8d2,
+            #d8c5c0
+        );
+}
+
+
+/* ---------------------------------------------------------
+   12. FINAL MEMORY / QUOTE
+--------------------------------------------------------- */
+
+.final-memory {
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(255, 235, 235, .8),
+            transparent 40%
+        ),
+        linear-gradient(
+            135deg,
+            #f7e8e6,
+            #f2dada
+        );
+}
+
+
+/* ---------------------------------------------------------
+   13. FOOTER
+--------------------------------------------------------- */
+
+footer {
+    background:
+        linear-gradient(
+            135deg,
+            #292326,
+            #403438
+        );
+
+    color: #fff;
+}
+
+
+/* =========================================================
+   MAKE INNER CONTAINERS TRANSPARENT
+   This prevents old backgrounds from covering sections
+========================================================= */
+
+.note-section .container,
+.memory-heading .container,
+.scrapbook .container,
+.memory-videos .container,
+.memory-details .container,
+.memory-timeline .container,
+.memory-film-section .container,
+.editorial-section .container,
+.editorial-gallery .container,
+.memory-rules .container,
+.memory-strip .container,
+.final-memory .container {
+    background: transparent;
+}
+
+
+/* =========================================================
+   RESPONSIVE BACKGROUND COLORS
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .hero,
+    .cover,
+    .cover-section {
+        background:
+            linear-gradient(
+                180deg,
+                #fff4f2 0%,
+                #f5dddd 100%
+            );
+    }
+
+
+    .note-section {
+        background:
+            linear-gradient(
+                180deg,
+                #f8eee9,
+                #f1e1dc
+            );
+    }
+
+
+    .memory-heading {
+        background:
+            linear-gradient(
+                180deg,
+                #f5eee9,
+                #eee4dd
+            );
+    }
+
+
+    .scrapbook {
+        background:
+            linear-gradient(
+                180deg,
+                #eee4da,
+                #f5ece4
+            );
+    }
+
+
+    .memory-videos {
+        background:
+            linear-gradient(
+                180deg,
+                #f2e6e4,
+                #eadbdd
+            );
+    }
+
+
+    .memory-details {
+        background:
+            linear-gradient(
+                180deg,
+                #f6f1ea,
+                #ebe5dd
+            );
+    }
+
+
+    .memory-timeline,
+    .timeline-section {
+        background:
+            linear-gradient(
+                180deg,
+                #eee5df,
+                #f4e9e5
+            );
+    }
+
+
+    .memory-film-section {
+        background:
+            linear-gradient(
+                180deg,
+                #fffaf7,
+                #f8eceb
+            );
+    }
+
+
+    .editorial-section,
+    .editorial-gallery {
+        background:
+            linear-gradient(
+                180deg,
+                #e8edef,
+                #f3f1ed
+            );
+    }
+
+
+    .memory-rules {
+        background:
+            linear-gradient(
+                180deg,
+                #f0e3e1,
+                #e8d8d5
+            );
+    }
+
+
+    .memory-strip {
+        background:
+            linear-gradient(
+                180deg,
+                #d8c7bf,
+                #e6d4ce
+            );
+    }
+
+
+    .final-memory {
+        background:
+            linear-gradient(
+                180deg,
+                #f8e8e7,
+                #efd7d7
+            );
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .hero,
+    .cover,
+    .cover-section {
+        background: #fff1ef;
+    }
+
+    .note-section {
+        background: #f5e9e4;
+    }
+
+    .memory-heading {
+        background: #f0e7e1;
+    }
+
+    .scrapbook {
+        background: #eee4da;
+    }
+
+    .memory-videos {
+        background: #f0e3e2;
+    }
+
+    .memory-details {
+        background: #f2eee7;
+    }
+
+    .memory-timeline,
+    .timeline-section {
+        background: #eee4df;
+    }
+
+    .memory-film-section {
+        background: #fff7f4;
+    }
+
+    .editorial-section,
+    .editorial-gallery {
+        background: #edf0ef;
+    }
+
+    .memory-rules {
+        background: #eee0de;
+    }
+
+    .memory-strip {
+        background: #dccbc4;
+    }
+
+    .final-memory {
+        background: #f4dfdf;
+    }
+}
+/* =========================================================
+   SCRAPBOOK COVER
+========================================================= */
+
+.scrap-cover {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f8eee5,
+            #f5e5dc
+        );
+
+    isolation: isolate;
+}
+
+
+/* =========================================================
+   BACKGROUND IMAGE
+========================================================= */
+
+.cover-image {
+    position: absolute;
+    inset: 0;
+
+    background-image: url("images/nesiga.png");
+
+    background-repeat: no-repeat;
+
+    /*
+       Image sits on the RIGHT side.
+       Because the image has transparent background,
+       the scrapbook background remains visible.
+    */
+    background-position: right center;
+    background-size: auto 92%;
+
+    z-index: -3;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   SOFT BACKGROUND OVERLAY
+========================================================= */
+
+.cover-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(248, 238, 229, 0.98) 0%,
+            rgba(248, 238, 229, 0.90) 28%,
+            rgba(248, 238, 229, 0.48) 52%,
+            rgba(248, 238, 229, 0.08) 78%,
+            rgba(248, 238, 229, 0) 100%
+        );
+
+    z-index: -2;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   PAPER TEXTURE
+========================================================= */
+
+.scrap-cover::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 15% 25%,
+            rgba(255,255,255,.65),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 75% 70%,
+            rgba(180,130,110,.08),
+            transparent 30%
+        );
+
+    z-index: -1;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.cover-content {
+    position: relative;
+
+    width: min(620px, 90%);
+
+    margin-right: auto;
+    margin-left: 8%;
+
+    text-align: center;
+
+    z-index: 5;
+
+    padding: 45px 30px;
+}
+
+
+/* =========================================================
+   SMALL TITLE
+========================================================= */
+
+.tiny-label {
+    font-family: "Poppins", sans-serif;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+
+    color: #9b6c68;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   MAIN TITLE
+========================================================= */
+
+.cover-content h1 {
+    margin: 0;
+
+    font-family: "DM Serif Display", serif;
+
+    font-size: clamp(70px, 9vw, 125px);
+
+    line-height: .82;
+
+    font-weight: 400;
+
+    color: #3e3432;
+
+    letter-spacing: -4px;
+}
+
+
+/* "People" */
+.cover-content h1 span {
+    display: block;
+
+    font-family: "Caveat", cursive;
+
+    font-size: 1.05em;
+
+    font-weight: 600;
+
+    color: #b56f70;
+
+    letter-spacing: 1px;
+
+    transform: rotate(-4deg);
+
+    margin-top: 8px;
+}
+
+
+/* =========================================================
+   HAND DRAWN LINE
+========================================================= */
+
+.hand-line {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+
+    margin: 25px auto;
+
+    color: #b56f70;
+
+    font-size: 20px;
+}
+
+.hand-line span {
+    width: 100px;
+    height: 1px;
+
+    background: #b9827d;
+
+    display: block;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.cover-description {
+    max-width: 530px;
+
+    margin: 0 auto 25px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 15px;
+
+    line-height: 1.9;
+
+    color: #625452;
+}
+
+
+/* =========================================================
+   MEMORY LABEL
+========================================================= */
+
+.cover-date {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 14px;
+
+    padding: 10px 22px;
+
+    background: rgba(255,255,255,.65);
+
+    border: 1px solid rgba(181,111,112,.18);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    color: #8c5e5c;
+
+    box-shadow:
+        0 8px 25px rgba(80,50,40,.08);
+
+    backdrop-filter: blur(5px);
+}
+
+.cover-date span {
+    color: #b56f70;
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   TAPE
+========================================================= */
+
+.cover-tape {
+    position: absolute;
+
+    width: 150px;
+    height: 42px;
+
+    background: rgba(218,184,145,.55);
+
+    z-index: 8;
+
+    backdrop-filter: blur(2px);
+
+    box-shadow:
+        0 4px 8px rgba(70,50,40,.08);
+}
+
+.tape-left {
+    top: 45px;
+    left: -25px;
+
+    transform: rotate(-38deg);
+}
+
+.tape-right {
+    top: 65px;
+    right: -30px;
+
+    transform: rotate(38deg);
+}
+
+
+/* =========================================================
+   HANDWRITTEN NOTES
+========================================================= */
+
+.cover-note {
+    position: absolute;
+
+    z-index: 10;
+
+    padding: 13px 20px;
+
+    background: #f5e5c9;
+
+    color: #765d55;
+
+    font-family: "Caveat", cursive;
+
+    font-size: 20px;
+
+    box-shadow:
+        0 7px 15px rgba(60,40,30,.12);
+}
+
+
+/* LEFT NOTE */
+
+.note-one {
+    top: 14%;
+
+    left: 5%;
+
+    transform: rotate(-7deg);
+}
+
+
+/* RIGHT NOTE */
+
+.note-two {
+    top: 16%;
+
+    right: 4%;
+
+    transform: rotate(6deg);
+}
+
+
+/* =========================================================
+   SCROLL HINT
+========================================================= */
+
+.scroll-hint {
+    position: absolute;
+
+    bottom: 35px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    color: #8d716c;
+
+    z-index: 10;
+}
+
+.scroll-hint span {
+    width: 1px;
+    height: 45px;
+
+    background: #a77d76;
+
+    position: relative;
+}
+
+.scroll-hint span::after {
+    content: "↓";
+
+    position: absolute;
+
+    bottom: -14px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 15px;
+
+    color: #9c6968;
+}
+
+
+/* =========================================================
+   REVEAL ANIMATION
+========================================================= */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(35px);
+
+    transition:
+        opacity .9s ease,
+        transform .9s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+    .scrap-cover {
+        min-height: 850px;
+    }
+
+    .cover-image {
+        background-position: 120% center;
+        background-size: auto 85%;
+    }
+
+    .cover-overlay {
+        background:
+            linear-gradient(
+                90deg,
+                rgba(248,238,229,.98) 0%,
+                rgba(248,238,229,.88) 42%,
+                rgba(248,238,229,.45) 68%,
+                rgba(248,238,229,.08) 100%
+            );
+    }
+
+    .cover-content {
+        width: 60%;
+        margin-left: 3%;
+    }
+
+    .cover-note {
+        font-size: 17px;
+    }
+
+    .note-one {
+        left: 2%;
+    }
+
+    .note-two {
+        right: 2%;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .scrap-cover {
+        min-height: 850px;
+
+        align-items: flex-start;
+
+        padding-top: 70px;
+    }
+
+
+    /* Image moves to bottom */
+
+    .cover-image {
+        background-position: center bottom;
+
+        background-size: auto 58%;
+
+        opacity: .95;
+    }
+
+
+    /* Stronger readable area */
+
+    .cover-overlay {
+        background:
+            linear-gradient(
+                180deg,
+                rgba(248,238,229,1) 0%,
+                rgba(248,238,229,.96) 42%,
+                rgba(248,238,229,.55) 67%,
+                rgba(248,238,229,.08) 100%
+            );
+    }
+
+
+    .cover-content {
+
+        width: 92%;
+
+        margin: 0 auto;
+
+        padding: 25px 15px;
+
+        z-index: 5;
+    }
+
+
+    .tiny-label {
+        font-size: 9px;
+
+        letter-spacing: 3px;
+
+        margin-bottom: 15px;
+    }
+
+
+    .cover-content h1 {
+
+        font-size: clamp(58px, 18vw, 85px);
+
+        letter-spacing: -2px;
+    }
+
+
+    .cover-content h1 span {
+
+        font-size: 1em;
+
+        margin-top: 5px;
+    }
+
+
+    .hand-line {
+
+        margin: 18px auto;
+
+        gap: 10px;
+    }
+
+
+    .hand-line span {
+        width: 55px;
+    }
+
+
+    .cover-description {
+
+        font-size: 13px;
+
+        line-height: 1.7;
+
+        max-width: 350px;
+    }
+
+
+    .cover-date {
+
+        font-size: 8px;
+
+        letter-spacing: 1.8px;
+
+        padding: 9px 13px;
+
+        gap: 8px;
+    }
+
+
+    /* Hide floating notes on smaller screen */
+
+    .cover-note {
+
+        font-size: 15px;
+
+        padding: 8px 12px;
+    }
+
+
+    .note-one {
+
+        top: 15px;
+        left: 8px;
+
+        transform: rotate(-6deg);
+    }
+
+
+    .note-two {
+
+        top: 15px;
+        right: 8px;
+
+        transform: rotate(6deg);
+    }
+
+
+    .cover-tape {
+
+        width: 90px;
+        height: 28px;
+    }
+
+
+    .tape-left {
+
+        top: 20px;
+        left: -25px;
+    }
+
+
+    .tape-right {
+
+        top: 25px;
+        right: -25px;
+    }
+
+
+    .scroll-hint {
+
+        bottom: 18px;
+
+        font-size: 8px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .scroll-hint span {
+        height: 25px;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .scrap-cover {
+        min-height: 780px;
+
+        padding-top: 65px;
+    }
+
+
+    .cover-image {
+        background-size: auto 52%;
+
+        background-position: center bottom;
+    }
+
+
+    .cover-content {
+        padding: 15px 10px;
+    }
+
+
+    .tiny-label {
+        font-size: 8px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .cover-content h1 {
+        font-size: 58px;
+    }
+
+
+    .cover-description {
+        font-size: 12px;
+
+        padding: 0 8px;
+    }
+
+
+    .cover-date {
+        font-size: 7px;
+
+        padding: 8px 10px;
+    }
+
+
+    .cover-note {
+        font-size: 13px;
+    }
+
+
+    .note-one,
+    .note-two {
+        top: 12px;
+    }
+}
+
+
+/* =========================================================
+   EXTRA SMALL PHONES
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .scrap-cover {
+        min-height: 730px;
+    }
+
+    .cover-image {
+        background-size: auto 48%;
+    }
+
+    .cover-content h1 {
+        font-size: 52px;
+    }
+
+    .cover-description {
+        font-size: 11px;
+    }
+
+    .cover-date {
+        letter-spacing: 1px;
+    }
+
+    .cover-note {
+        display: none;
+    }
+
+    .scroll-hint {
+        display: none;
+    }
+}
