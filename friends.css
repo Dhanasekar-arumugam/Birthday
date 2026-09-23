@@ -7122,7 +7122,7 @@ section,
 
 
 .photo-frame img {
-  padding-top: 0px;
+  margin-top: 0px;
 
     width: 100%;
 
@@ -11467,4 +11467,1364 @@ font-size: 14px;
     .editorial-caption h3 {
         font-size: 28px;
     }
+}
+/* =========================================================
+   UNIQUE VIDEO SCRAPBOOK
+========================================================= */
+
+.memory-videos {
+    position: relative;
+    padding: 150px 6%;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255, 190, 200, .18),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(240, 210, 160, .16),
+            transparent 30%
+        ),
+        #292222;
+}
+
+
+/* subtle moving background */
+
+.memory-videos::before {
+    content: "";
+    position: absolute;
+    inset: -50%;
+
+    background-image:
+        linear-gradient(
+            45deg,
+            transparent 48%,
+            rgba(255,255,255,.025) 49%,
+            transparent 51%
+        );
+
+    background-size: 30px 30px;
+
+    animation: filmBackground 25s linear infinite;
+
+    pointer-events: none;
+}
+
+@keyframes filmBackground {
+    from {
+        transform: translate(0,0);
+    }
+
+    to {
+        transform: translate(30px,30px);
+    }
+}
+
+
+/* =========================================================
+   VIDEO HEADING
+========================================================= */
+
+.video-heading {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto 90px;
+
+    text-align: center;
+
+    color: white;
+
+    z-index: 2;
+}
+
+.video-heading .section-kicker {
+    color: #dca8ad;
+    letter-spacing: 4px;
+}
+
+.video-heading h2 {
+    font-family: "DM Serif Display", serif;
+
+    font-size: clamp(48px, 6vw, 78px);
+
+    line-height: .95;
+
+    margin: 18px 0;
+
+    color: #fffaf5;
+}
+
+.video-heading h2 em {
+    display: block;
+
+    font-family: "Caveat", cursive;
+
+    font-size: 1.1em;
+
+    color: #e8a9b2;
+
+    transform: rotate(-3deg);
+}
+
+.video-heading p {
+    max-width: 560px;
+
+    margin: 25px auto;
+
+    color: rgba(255,255,255,.62);
+
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   VIDEO GRID
+========================================================= */
+
+.video-scrapbook {
+    position: relative;
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(12, 1fr);
+
+    gap: 35px;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   VIDEO CARD
+========================================================= */
+
+.video-card {
+    position: relative;
+
+    background: #f8f0e6;
+
+    padding: 15px;
+
+    box-shadow:
+        0 30px 60px rgba(0,0,0,.35);
+
+    transition:
+        transform .5s cubic-bezier(.2,.8,.2,1),
+        box-shadow .5s ease;
+}
+
+
+/* unique positions */
+
+.video-card-one {
+    grid-column: 1 / 7;
+
+    transform: rotate(-2deg);
+}
+
+.video-card-two {
+    grid-column: 7 / 13;
+
+    transform: rotate(2deg);
+
+    margin-top: 100px;
+}
+
+.video-card-three {
+    grid-column: 4 / 10;
+
+    transform: rotate(-1deg);
+
+    margin-top: 30px;
+}
+
+
+/* hover */
+
+.video-card:hover {
+    transform:
+        translateY(-18px)
+        rotate(0deg)
+        scale(1.025);
+
+    box-shadow:
+        0 45px 80px rgba(0,0,0,.45);
+
+    z-index: 10;
+}
+
+
+/* =========================================================
+   TAPE
+========================================================= */
+
+.video-tape {
+    position: absolute;
+
+    width: 100px;
+    height: 28px;
+
+    top: -14px;
+    left: 50%;
+
+    transform: translateX(-50%) rotate(-3deg);
+
+    background: rgba(224,192,145,.72);
+
+    box-shadow:
+        0 3px 8px rgba(0,0,0,.12);
+
+    z-index: 10;
+}
+
+.video-card-two .video-tape {
+    transform:
+        translateX(-50%)
+        rotate(4deg);
+}
+
+.video-card-three .video-tape {
+    transform:
+        translateX(-50%)
+        rotate(-2deg);
+}
+
+
+/* =========================================================
+   VIDEO FRAME
+========================================================= */
+
+.video-frame {
+    position: relative;
+
+    overflow: hidden;
+
+    background: #181414;
+
+    aspect-ratio: 16 / 10;
+}
+
+.video-frame video {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform .8s ease,
+        filter .5s ease;
+}
+
+.video-card:hover video {
+    transform: scale(1.04);
+}
+
+
+/* =========================================================
+   PLAY DECORATION
+========================================================= */
+
+.play-decoration {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 72px;
+    height: 72px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255,255,255,.88);
+
+    color: #704b51;
+
+    font-size: 21px;
+
+    padding-left: 4px;
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,.3);
+
+    pointer-events: none;
+
+    transition:
+        transform .4s ease,
+        opacity .4s ease;
+}
+
+.video-card:hover .play-decoration {
+    transform:
+        translate(-50%, -50%)
+        scale(1.18);
+
+    opacity: .95;
+}
+
+
+/* =========================================================
+   VIDEO CAPTION
+========================================================= */
+
+.video-caption {
+    position: relative;
+
+    padding: 25px 15px 15px;
+
+    text-align: center;
+}
+
+.video-caption > span {
+    font-family: "Poppins", sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    color: #a47478;
+}
+
+.video-caption h3 {
+    margin: 8px 0;
+
+    font-family: "Caveat", cursive;
+
+    font-size: 35px;
+
+    color: #352929;
+}
+
+.video-caption p {
+    max-width: 380px;
+
+    margin: auto;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+
+    color: #776c68;
+}
+
+.video-heart {
+    margin-top: 15px;
+
+    font-size: 20px;
+
+    color: #b66c77;
+}
+
+
+/* =========================================================
+   VIDEO CARD CORNER NUMBER
+========================================================= */
+
+.video-card::after {
+    content: "▶";
+
+    position: absolute;
+
+    right: 18px;
+    top: 18px;
+
+    width: 34px;
+    height: 34px;
+
+    border-radius: 50%;
+
+    background: #332929;
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 11px;
+
+    z-index: 5;
+}
+
+
+/* =========================================================
+   ENDING
+========================================================= */
+
+.video-ending {
+    position: relative;
+
+    margin-top: 100px;
+
+    text-align: center;
+
+    color: rgba(255,255,255,.7);
+
+    z-index: 2;
+}
+
+.video-ending span {
+    display: inline-block;
+
+    font-family: "Caveat", cursive;
+
+    font-size: 30px;
+
+    color: #e7aab1;
+
+    transform: rotate(-3deg);
+}
+
+.video-ending p {
+    margin-top: 12px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   MOBILE VIDEO DESIGN
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .memory-videos {
+        padding: 100px 20px;
+    }
+
+    .video-scrapbook {
+        display: flex;
+
+        flex-direction: column;
+
+        max-width: 650px;
+
+        gap: 70px;
+    }
+
+    .video-card-one,
+    .video-card-two,
+    .video-card-three {
+        margin-top: 0;
+
+        transform: rotate(0deg);
+    }
+
+    .video-card:hover {
+        transform:
+            translateY(-8px)
+            scale(1.01);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .video-heading {
+        margin-bottom: 60px;
+    }
+
+    .video-heading h2 {
+        font-size: 48px;
+    }
+
+    .video-card {
+        padding: 10px;
+    }
+
+    .video-caption {
+        padding: 20px 8px 10px;
+    }
+
+    .video-caption h3 {
+        font-size: 30px;
+    }
+
+    .play-decoration {
+        width: 58px;
+        height: 58px;
+
+        font-size: 17px;
+    }
+
+    .video-tape {
+        width: 80px;
+        height: 22px;
+
+        top: -11px;
+    }
+
+}
+/* =========================================================
+   05 — MORE MEMORIES
+   POSEIFY INSPIRED EDITORIAL GALLERY
+========================================================= */
+
+.memory-film-section {
+    position: relative;
+    width: 100%;
+    padding: 140px 0 150px;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   SECTION INTRO
+========================================================= */
+
+.film-intro {
+    width: min(1200px, 90%);
+    margin: 0 auto 90px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.film-intro::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-top: 180px;
+    height: 1px;
+    background: #e8e4df;
+}
+
+.film-intro > div {
+    max-width: 700px;
+}
+
+.film-mini-label {
+    display: block;
+
+    margin-bottom: 18px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 4px;
+
+    color: #a27679;
+
+    text-transform: uppercase;
+}
+
+.film-intro h2 {
+    margin: 0;
+
+    font-family: "DM Serif Display", serif;
+
+    font-size: clamp(48px, 6vw, 82px);
+
+    line-height: .95;
+
+    font-weight: 400;
+
+    color: #242020;
+}
+
+.film-intro h2 span {
+    display: block;
+
+    font-family: "Caveat", cursive;
+
+    font-size: 1.05em;
+
+    color: #b56f78;
+
+    font-weight: 500;
+
+    transform: translateX(30px);
+}
+
+.film-intro p {
+    width: 330px;
+
+    margin: 0;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 13px;
+
+    line-height: 1.9;
+
+    color: #77706d;
+}
+
+
+/* =========================================================
+   MAIN GALLERY
+========================================================= */
+
+.memory-film {
+    width: min(1250px, 90%);
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(12, 1fr);
+
+    grid-auto-rows: auto;
+
+    column-gap: 35px;
+
+    row-gap: 100px;
+}
+
+
+/* =========================================================
+   MEMORY CARD
+========================================================= */
+
+.film-memory {
+    position: relative;
+
+    min-width: 0;
+}
+
+
+/* =========================================================
+   DIFFERENT POSITIONS
+========================================================= */
+
+.film-memory-1 {
+    grid-column: 1 / 7;
+
+    margin-top: 20px;
+}
+
+.film-memory-2 {
+    grid-column: 8 / 13;
+
+    margin-top: 160px;
+}
+
+.film-memory-3 {
+    grid-column: 3 / 9;
+
+    margin-top: 30px;
+}
+
+.film-memory-4 {
+    grid-column: 9 / 13;
+
+    margin-top: 0;
+}
+
+.film-memory-5 {
+    grid-column: 1 / 8;
+
+    margin-top: 70px;
+}
+
+
+/* =========================================================
+   IMAGE AREA
+========================================================= */
+
+.film-image-wrap {
+    position: relative;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    background: #eee9e4;
+
+    cursor: pointer;
+}
+
+
+/* large editorial images */
+
+.film-memory-1 .film-image-wrap {
+    aspect-ratio: 4 / 5;
+}
+
+.film-memory-2 .film-image-wrap {
+    aspect-ratio: 4 / 5;
+}
+
+.film-memory-3 .film-image-wrap {
+    aspect-ratio: 16 / 11;
+}
+
+.film-memory-4 .film-image-wrap {
+    aspect-ratio: 4 / 5;
+}
+
+.film-memory-5 .film-image-wrap {
+    aspect-ratio: 16 / 10;
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.film-image-wrap img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform .9s cubic-bezier(.2,.7,.2,1),
+        filter .6s ease;
+}
+
+.film-memory:hover .film-image-wrap img {
+    transform: scale(1.06);
+
+    filter:
+        brightness(.78)
+        saturate(1.08);
+}
+
+
+/* =========================================================
+   DARK HOVER
+========================================================= */
+
+.film-image-wrap::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(20,15,15,0) 45%,
+            rgba(20,15,15,.65) 100%
+        );
+
+    opacity: 0;
+
+    transition: opacity .5s ease;
+
+    pointer-events: none;
+}
+
+.film-memory:hover .film-image-wrap::after {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   REMOVE OLD FILM HOLES VISUALLY
+========================================================= */
+
+.film-holes {
+    display: none;
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.film-number {
+    position: absolute;
+
+    top: -18px;
+    left: -18px;
+
+    z-index: 5;
+
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ffffff;
+
+    border-radius: 50%;
+
+    font-family: "DM Serif Display", serif;
+
+    font-size: 17px;
+
+    color: #332b2b;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.10);
+
+    transition:
+        transform .4s ease,
+        background .4s ease;
+}
+
+.film-memory:hover .film-number {
+    transform: scale(1.08) rotate(-8deg);
+
+    background: #b56f78;
+
+    color: white;
+}
+
+
+/* =========================================================
+   VIEW BUTTON
+========================================================= */
+
+.film-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    opacity: 0;
+
+    z-index: 4;
+
+    transition: opacity .45s ease;
+}
+
+.film-memory:hover .film-overlay {
+    opacity: 1;
+}
+
+.film-overlay button {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 14px 24px;
+
+    border: 1px solid rgba(255,255,255,.8);
+
+    background: rgba(255,255,255,.08);
+
+    backdrop-filter: blur(8px);
+
+    color: white;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition:
+        background .3s ease,
+        color .3s ease,
+        transform .3s ease;
+}
+
+.film-overlay button:hover {
+    background: white;
+
+    color: #282222;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   CAPTION
+========================================================= */
+
+.film-text {
+    position: relative;
+
+    padding: 22px 0 0;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 25px;
+}
+
+.film-text span {
+    flex-shrink: 0;
+
+    padding-top: 7px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: #a27679;
+
+    font-weight: 600;
+}
+
+.film-text h3 {
+    margin: 0;
+
+    font-family: "DM Serif Display", serif;
+
+    font-size: clamp(23px, 2.3vw, 34px);
+
+    font-weight: 400;
+
+    line-height: 1.05;
+
+    color: #2b2525;
+}
+
+.film-text p {
+    display: none;
+}
+
+
+/* =========================================================
+   SMALL DECORATIVE LINE
+========================================================= */
+
+.film-text::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -20px;
+
+    width: 35px;
+
+    height: 1px;
+
+    background: #b56f78;
+
+    transition:
+        width .4s ease;
+}
+
+.film-memory:hover .film-text::after {
+    width: 75px;
+}
+
+
+/* =========================================================
+   LARGE CENTER IMAGE
+========================================================= */
+
+.film-memory-3 {
+    position: relative;
+}
+
+.film-memory-3::before {
+    content: "A LITTLE MOMENT";
+
+    position: absolute;
+
+    right: -70px;
+
+    top: 50%;
+
+    transform: rotate(90deg);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    color: #aaa19d;
+}
+
+
+/* =========================================================
+   FIFTH IMAGE SPECIAL STYLE
+========================================================= */
+
+.film-memory-5 .film-image-wrap {
+    position: relative;
+}
+
+.film-memory-5 .film-image-wrap::before {
+    content: "05";
+
+    position: absolute;
+
+    right: 25px;
+
+    bottom: 20px;
+
+    z-index: 6;
+
+    font-family: "DM Serif Display", serif;
+
+    font-size: 70px;
+
+    color: rgba(255,255,255,.75);
+
+    line-height: 1;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   ENDING
+========================================================= */
+
+.film-ending {
+    width: min(900px, 90%);
+
+    margin: 130px auto 0;
+
+    padding-top: 45px;
+
+    border-top: 1px solid #e4dfda;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    text-align: center;
+
+    color: #77706d;
+}
+
+.film-ending span {
+    font-family: "Caveat", cursive;
+
+    font-size: 28px;
+
+    color: #b56f78;
+}
+
+.film-ending p {
+    margin: 0;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+}
+
+.film-ending strong {
+    color: #2e2727;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 992px) {
+
+    .memory-film-section {
+        padding: 110px 0 120px;
+    }
+
+    .film-intro {
+        width: 86%;
+
+        margin-bottom: 70px;
+    }
+
+    .film-intro p {
+        width: 280px;
+    }
+
+    .memory-film {
+        width: 86%;
+
+        column-gap: 25px;
+
+        row-gap: 70px;
+    }
+
+    .film-memory-1 {
+        grid-column: 1 / 7;
+    }
+
+    .film-memory-2 {
+        grid-column: 8 / 13;
+
+        margin-top: 100px;
+    }
+
+    .film-memory-3 {
+        grid-column: 2 / 9;
+    }
+
+    .film-memory-4 {
+        grid-column: 9 / 13;
+    }
+
+    .film-memory-5 {
+        grid-column: 1 / 8;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .memory-film-section {
+        padding: 90px 0 100px;
+    }
+
+
+    /* heading */
+
+    .film-intro {
+        width: 88%;
+
+        display: block;
+
+        margin-bottom: 65px;
+    }
+
+    .film-intro::after {
+        display: none;
+    }
+
+    .film-mini-label {
+        font-size: 9px;
+
+        letter-spacing: 3px;
+    }
+
+    .film-intro h2 {
+        font-size: 52px;
+
+        line-height: .9;
+    }
+
+    .film-intro h2 span {
+        transform: none;
+    }
+
+    .film-intro p {
+        width: 100%;
+
+        max-width: 450px;
+
+        margin-top: 25px;
+
+        font-size: 12px;
+
+        line-height: 1.8;
+    }
+
+
+    /* gallery */
+
+    .memory-film {
+        width: 88%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 70px;
+    }
+
+
+    /* all images full width */
+
+    .film-memory-1,
+    .film-memory-2,
+    .film-memory-3,
+    .film-memory-4,
+    .film-memory-5 {
+        width: 100%;
+
+        margin: 0;
+    }
+
+
+    /* image ratios */
+
+    .film-memory-1 .film-image-wrap,
+    .film-memory-2 .film-image-wrap,
+    .film-memory-4 .film-image-wrap {
+        aspect-ratio: 4 / 5;
+    }
+
+    .film-memory-3 .film-image-wrap,
+    .film-memory-5 .film-image-wrap {
+        aspect-ratio: 4 / 3;
+    }
+
+
+    /* number */
+
+    .film-number {
+        width: 45px;
+        height: 45px;
+
+        top: -12px;
+        left: -10px;
+
+        font-size: 14px;
+    }
+
+
+    /* captions */
+
+    .film-text {
+        padding-top: 17px;
+
+        display: block;
+    }
+
+    .film-text span {
+        display: block;
+
+        padding: 0;
+
+        margin-bottom: 6px;
+    }
+
+    .film-text h3 {
+        font-size: 29px;
+    }
+
+
+    /* hover is replaced with tap-friendly visual */
+
+    .film-overlay {
+        opacity: 1;
+
+        align-items: flex-end;
+
+        justify-content: flex-end;
+
+        padding: 15px;
+    }
+
+    .film-overlay button {
+        padding: 10px 15px;
+
+        font-size: 8px;
+    }
+
+    .film-overlay button i {
+        font-size: 11px;
+    }
+
+
+    /* remove side decoration */
+
+    .film-memory-3::before {
+        display: none;
+    }
+
+
+    /* fifth number */
+
+    .film-memory-5 .film-image-wrap::before {
+        font-size: 45px;
+
+        right: 15px;
+
+        bottom: 12px;
+    }
+
+
+    /* ending */
+
+    .film-ending {
+        width: 88%;
+
+        margin-top: 90px;
+
+        padding-top: 30px;
+
+        gap: 12px;
+    }
+
+    .film-ending p {
+        font-size: 10px;
+
+        line-height: 1.7;
+    }
+
+    .film-ending span {
+        font-size: 23px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .film-intro h2 {
+        font-size: 44px;
+    }
+
+    .memory-film {
+        width: 92%;
+    }
+
+    .film-text h3 {
+        font-size: 26px;
+    }
+
+    .film-ending {
+        width: 92%;
+    }
+
 }
