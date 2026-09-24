@@ -13637,6 +13637,7 @@ footer {
     text-transform: uppercase;
 
     color: #8c5e5c;
+    margin-top: auto;
 
     box-shadow:
         0 8px 25px rgba(80,50,40,.08);
