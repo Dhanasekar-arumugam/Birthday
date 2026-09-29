@@ -681,3 +681,146 @@ function createFireworks() {
       navLinks.classList.remove("active");
     });
   });
+
+/* =========================================================
+   OUR LITTLE MOVIES — FLOATING CINEMA PLAYER
+========================================================= */
+
+(() => {
+    "use strict";
+
+    function initializeMoviePlayer() {
+        const modal = document.getElementById("filmModal");
+        const player = document.getElementById("filmPlayer");
+        const title = document.getElementById("filmModalTitle");
+        const closeButton = document.getElementById("filmModalClose");
+
+        if (!modal || !player || !title || !closeButton) {
+            console.error(
+                "Movie player: check the modal HTML and element IDs."
+            );
+            return;
+        }
+
+        let previousFocus = null;
+
+        /* Open the floating player */
+
+        function openFilm(videoPath, videoTitle, trigger) {
+            if (!videoPath) {
+                console.error("Movie player: missing video path.");
+                return;
+            }
+
+            previousFocus = trigger || document.activeElement;
+
+            player.pause();
+            player.src = videoPath;
+            player.load();
+
+            title.textContent = videoTitle || "Our Little Movie";
+
+            modal.classList.add("active");
+            modal.setAttribute("aria-hidden", "false");
+            document.body.classList.add("film-modal-open");
+
+            closeButton.focus();
+
+            const playRequest = player.play();
+
+            if (playRequest && typeof playRequest.catch === "function") {
+                playRequest.catch(() => {
+                    // If autoplay is blocked, use the native Play control.
+                });
+            }
+        }
+
+        /* Close player and stop the video */
+
+        function closeFilm() {
+            if (!modal.classList.contains("active")) return;
+
+            player.pause();
+            player.removeAttribute("src");
+            player.load();
+
+            modal.classList.remove("active");
+            modal.setAttribute("aria-hidden", "true");
+            document.body.classList.remove("film-modal-open");
+
+            if (
+                previousFocus &&
+                typeof previousFocus.focus === "function"
+            ) {
+                previousFocus.focus();
+            }
+        }
+
+        /* Attach events to every thumbnail and Watch button */
+
+        document.querySelectorAll(".film-screen, .film-open")
+            .forEach((trigger) => {
+                trigger.addEventListener("click", (event) => {
+                    event.stopPropagation();
+
+                    openFilm(
+                        trigger.dataset.video,
+                        trigger.dataset.title,
+                        trigger
+                    );
+                });
+
+                /* Keyboard support for thumbnails */
+
+                if (trigger.classList.contains("film-screen")) {
+                    trigger.addEventListener("keydown", (event) => {
+                        if (event.target !== trigger) return;
+
+                        if (
+                            event.key === "Enter" ||
+                            event.key === " "
+                        ) {
+                            event.preventDefault();
+
+                            openFilm(
+                                trigger.dataset.video,
+                                trigger.dataset.title,
+                                trigger
+                            );
+                        }
+                    });
+                }
+            });
+
+        /* Close button */
+
+        closeButton.addEventListener("click", closeFilm);
+
+        /* Escape key */
+
+        document.addEventListener("keydown", (event) => {
+            if (
+                event.key === "Escape" &&
+                modal.classList.contains("active")
+            ) {
+                closeFilm();
+            }
+        });
+
+        /* Prevent background page scrolling while playing */
+
+        document.body.classList.remove("film-modal-open");
+    }
+
+    /* Works whether this script loads before or after DOM readiness */
+
+    if (document.readyState === "loading") {
+        document.addEventListener(
+            "DOMContentLoaded",
+            initializeMoviePlayer,
+            { once: true }
+        );
+    } else {
+        initializeMoviePlayer();
+    }
+})();

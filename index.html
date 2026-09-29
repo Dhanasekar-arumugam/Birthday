@@ -438,6 +438,18 @@
       #seconds {
         color: gold;
       }
+    
+      /* Video cover used by Film 01 */
+      .film-cover-video {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        background: #000;
+        pointer-events: none;
+      }
+
     </style>
   </head>
 
@@ -472,7 +484,15 @@
         <a href="#home" class="brand"> Our <span>Memories</span> </a>
 
         <!-- Mobile menu button -->
-        <button class="menu-btn" id="menuBtn" type="button" aria-label="Open navigation menu" aria-expanded="false">☰</button>
+        <button
+          class="menu-btn"
+          id="menuBtn"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
 
         <div class="nav-links" id="navLinks">
           <a href="#memories">Memories</a>
@@ -572,8 +592,6 @@
     <!-- =====================================================
        MAIN
   ====================================================== -->
-
-
 
     <main>
       <!-- =================================================
@@ -757,6 +775,322 @@
         <p>— With love, always</p>
       </section>
 
+      <!-- =====================================================
+     OUR LITTLE MOVIES — CINEMATIC GOLD VIDEO SECTION
+====================================================== -->
+
+      <section class="video-section" id="little-movies">
+        <!-- SECTION HEADING -->
+        <div class="video-heading">
+          <div class="video-kicker">Beyond the photographs</div>
+
+          <p class="section-label">03 / Our little movies</p>
+
+          <h2>Memories in <em>motion.</em></h2>
+
+          <p>
+            Some memories are too precious to stay in a photograph.
+            <br />
+            Press play and relive four little pieces of happiness.
+          </p>
+        </div>
+
+        <!-- =================================================
+         VIDEO CARDS
+    ================================================== -->
+
+        <div class="video-grid">
+          <!-- VIDEO 01 -->
+          <article class="memory-film">
+            <div
+              class="film-screen"
+              data-video="images/neisdhana.mp4"
+              data-title="A Little Birthday Film"
+              role="button"
+              tabindex="0"
+              aria-label="Play A Little Birthday Film"
+            >
+              <video
+                class="film-cover-video"
+                muted
+                playsinline
+                preload="metadata"
+                aria-hidden="true"
+              >
+                <source src="images/neisdhana.mp4" type="video/mp4" />
+              </video>
+
+              <span class="film-number"> FILM 01 </span>
+
+              <span class="film-type"> Birthday Special </span>
+
+              <button
+                class="film-play"
+                type="button"
+                aria-label="Play birthday film"
+              >
+                ▶
+              </button>
+
+              <div class="film-overlay-title">A little film, just for you.</div>
+            </div>
+
+            <div class="film-details">
+              <div class="film-meta">
+                <span>01 — The celebration</span>
+                <span aria-hidden="true">♡</span>
+              </div>
+
+              <h3>A Little Birthday Film</h3>
+
+              <p>
+                A tiny cinematic surprise made to celebrate your beautiful day.
+              </p>
+
+              <button
+                class="film-open"
+                type="button"
+                data-video="images/neisdhana.mp4"
+                data-title="A Little Birthday Film"
+              >
+                <span>Watch the film</span>
+                <span aria-hidden="true">→</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- VIDEO 02 -->
+          <article class="memory-film">
+            <div
+              class="film-screen"
+              data-video="images/video2.mp4"
+              data-title="Our Memory Lane"
+              role="button"
+              tabindex="0"
+              aria-label="Play Our Memory Lane"
+            >
+              <img
+                src="images/video-cover2.jpg"
+                alt="Our memory lane video cover"
+                loading="lazy"
+              />
+
+              <span class="film-number"> FILM 02 </span>
+
+              <span class="film-type"> Memory Lane </span>
+
+              <button
+                class="film-play"
+                type="button"
+                aria-label="Play memory lane video"
+              >
+                ▶
+              </button>
+
+              <div class="film-overlay-title">Little moments, forever.</div>
+            </div>
+
+            <div class="film-details">
+              <div class="film-meta">
+                <span>02 — Our story</span>
+                <span aria-hidden="true">✦</span>
+              </div>
+
+              <h3>Our Memory Lane</h3>
+
+              <p>
+                Revisit the photographs, laughter and little adventures that
+                became unforgettable.
+              </p>
+
+              <button
+                class="film-open"
+                type="button"
+                data-video="images/video2.mp4"
+                data-title="Our Memory Lane"
+              >
+                <span>Relive the memories</span>
+                <span aria-hidden="true">→</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- VIDEO 03 -->
+          <article class="memory-film">
+            <div
+              class="film-screen"
+              data-video="images/video3.mp4"
+              data-title="A Message from the Heart"
+              role="button"
+              tabindex="0"
+              aria-label="Play A Message from the Heart"
+            >
+              <img
+                src="images/video-cover3.jpg"
+                alt="Handwritten letter video cover"
+                loading="lazy"
+              />
+
+              <span class="film-number"> FILM 03 </span>
+
+              <span class="film-type"> From the heart </span>
+
+              <button
+                class="film-play"
+                type="button"
+                aria-label="Play heartfelt message"
+              >
+                ▶
+              </button>
+
+              <div class="film-overlay-title">A little message for you.</div>
+            </div>
+
+            <div class="film-details">
+              <div class="film-meta">
+                <span>03 — Just for you</span>
+                <span aria-hidden="true">♥</span>
+              </div>
+
+              <h3>A Message from the Heart</h3>
+
+              <p>
+                A personal video filled with wishes, gratitude and a little
+                extra love.
+              </p>
+
+              <button
+                class="film-open"
+                type="button"
+                data-video="images/video3.mp4"
+                data-title="A Message from the Heart"
+              >
+                <span>Open your message</span>
+                <span aria-hidden="true">→</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- VIDEO 04 -->
+          <article class="memory-film">
+            <div
+              class="film-screen"
+              data-video="images/video4.mp4"
+              data-title="Forever in My Memories"
+              role="button"
+              tabindex="0"
+              aria-label="Play Forever in My Memories"
+            >
+              <img
+                src="images/video-cover4.jpg"
+                alt="Special friendship memories video cover"
+                loading="lazy"
+              />
+
+              <span class="film-number"> FILM 04 </span>
+
+              <span class="film-type"> Forever yours </span>
+
+              <button
+                class="film-play"
+                type="button"
+                aria-label="Play special memories"
+              >
+                ▶
+              </button>
+
+              <div class="film-overlay-title">Some moments never fade.</div>
+            </div>
+
+            <div class="film-details">
+              <div class="film-meta">
+                <span>04 — Forever</span>
+                <span aria-hidden="true">♡</span>
+              </div>
+
+              <h3>Forever in My Memories</h3>
+
+              <p>
+                One more little collection of moments that will always have a
+                place in my heart.
+              </p>
+
+              <button
+                class="film-open"
+                type="button"
+                data-video="images/video4.mp4"
+                data-title="Forever in My Memories"
+              >
+                <span>Watch our memories</span>
+                <span aria-hidden="true">→</span>
+              </button>
+            </div>
+          </article>
+        </div>
+
+        <!-- =================================================
+         SECTION FOOTNOTE
+    ================================================== -->
+
+        <div class="video-footnote">
+          <span>MADE OF LITTLE MOMENTS</span>
+          <span aria-hidden="true">♥</span>
+          <span>SAVED FOREVER</span>
+        </div>
+      </section>
+
+      <!-- =====================================================
+     FLOATING PRIVATE CINEMA VIDEO PLAYER
+     Add this only ONCE to your HTML.
+====================================================== -->
+
+      <div
+        class="film-modal"
+        id="filmModal"
+        role="dialog"
+        aria-modal="false"
+        aria-hidden="true"
+        aria-labelledby="filmModalTitle"
+      >
+        <div class="film-modal-box">
+          <!-- PLAYER HEADER -->
+          <div class="film-modal-top">
+            <div>
+              <p>Our private cinema · Now playing</p>
+
+              <h3 id="filmModalTitle">A Little Birthday Film</h3>
+            </div>
+
+            <button
+              class="film-modal-close"
+              id="filmModalClose"
+              type="button"
+              aria-label="Close video player"
+            >
+              ×
+            </button>
+          </div>
+
+          <!-- VIDEO PLAYER -->
+          <video
+            class="film-player"
+            id="filmPlayer"
+            controls
+            playsinline
+            preload="metadata"
+          >
+            Your browser does not support HTML video.
+          </video>
+
+          <!-- PLAYER FOOTER -->
+          <div class="film-modal-bottom">
+            <span> ♥ &nbsp; Made with love, just for you </span>
+
+            <span> Use the player controls for volume and fullscreen. </span>
+          </div>
+        </div>
+      </div>
+
       <!-- =================================================
      JOURNEY
 ================================================== -->
@@ -865,7 +1199,16 @@
             </p>
 
             <p>
-              <mark style="background-color: rgb(137, 106, 166); padding:0px 5px 0px 5px; border-radius: 2px;">-<del>I think you are my Oxygen, I can't live without you...!</del></mark>
+              <mark
+                style="
+                  background-color: rgb(137, 106, 166);
+                  padding: 0px 5px 0px 5px;
+                  border-radius: 2px;
+                "
+                >-<del
+                  >I think you are my Oxygen, I can't live without you...!</del
+                ></mark
+              >
             </p>
 
             <p class="signature">Happy Birthday, with lots of love ♥</p>
@@ -954,7 +1297,12 @@
       <div class="surprise-box">
         <button class="modal-close" id="modalClose">×</button>
 
-        <div class="big-heart"><img src="https://images.emojiterra.com/google/noto-emoji/animated-emoji/1fac0.gif" alt=""></div>
+        <div class="big-heart">
+          <img
+            src="https://images.emojiterra.com/google/noto-emoji/animated-emoji/1fac0.gif"
+            alt=""
+          />
+        </div>
 
         <h2>Love You Nesi ❤️</h2>
 
@@ -1025,7 +1373,7 @@
           menuBtn.setAttribute("aria-expanded", String(isOpen));
           menuBtn.setAttribute(
             "aria-label",
-            isOpen ? "Close navigation menu" : "Open navigation menu"
+            isOpen ? "Close navigation menu" : "Open navigation menu",
           );
           menuBtn.textContent = isOpen ? "×" : "☰";
         });
@@ -1151,5 +1499,131 @@
         }
       }, 1000);
     </script>
+  
+    <!-- =====================================================
+       CINEMATIC VIDEO PLAYER JAVASCRIPT
+       Self-contained: play buttons + card click + modal close
+    ====================================================== -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const filmModal = document.getElementById("filmModal");
+        const filmPlayer = document.getElementById("filmPlayer");
+        const filmModalTitle = document.getElementById("filmModalTitle");
+        const filmModalClose = document.getElementById("filmModalClose");
+
+        if (!filmModal || !filmPlayer) return;
+
+        const openFilm = (videoUrl, title) => {
+          if (!videoUrl) return;
+
+          filmModalTitle.textContent = title || "Our Little Movie";
+
+          // Stop any previous video completely.
+          filmPlayer.pause();
+          filmPlayer.removeAttribute("src");
+          filmPlayer.load();
+
+          // Load the selected video.
+          filmPlayer.src = videoUrl;
+          filmPlayer.load();
+
+          filmModal.classList.add("active");
+          filmModal.setAttribute("aria-hidden", "false");
+          document.body.classList.add("no-scroll");
+
+          // Start playback after the source has loaded.
+          const startPlayback = () => {
+            const playPromise = filmPlayer.play();
+
+            if (playPromise && typeof playPromise.catch === "function") {
+              playPromise.catch(() => {
+                // Browser may block programmatic playback.
+                // The native video controls remain available.
+              });
+            }
+          };
+
+          filmPlayer.addEventListener("loadeddata", startPlayback, { once: true });
+        };
+
+        const closeFilm = () => {
+          filmPlayer.pause();
+          filmPlayer.removeAttribute("src");
+          filmPlayer.load();
+
+          filmModal.classList.remove("active");
+          filmModal.setAttribute("aria-hidden", "true");
+          document.body.classList.remove("no-scroll");
+        };
+
+        // Circular play buttons.
+        document.querySelectorAll(".film-play").forEach((button) => {
+          button.addEventListener("click", (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+
+            const screen = button.closest(".film-screen");
+            if (!screen) return;
+
+            openFilm(
+              screen.dataset.video,
+              screen.dataset.title
+            );
+          });
+        });
+
+        // "Watch the film" buttons.
+        document.querySelectorAll(".film-open").forEach((button) => {
+          button.addEventListener("click", (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+
+            openFilm(
+              button.dataset.video,
+              button.dataset.title
+            );
+          });
+        });
+
+        // Clicking the film screen itself.
+        document.querySelectorAll(".film-screen").forEach((screen) => {
+          screen.addEventListener("click", (event) => {
+            if (event.target.closest(".film-play")) return;
+
+            openFilm(
+              screen.dataset.video,
+              screen.dataset.title
+            );
+          });
+
+          screen.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              openFilm(
+                screen.dataset.video,
+                screen.dataset.title
+              );
+            }
+          });
+        });
+
+        filmModalClose?.addEventListener("click", closeFilm);
+
+        // Close when clicking outside the player box.
+        filmModal.addEventListener("click", (event) => {
+          if (event.target === filmModal) {
+            closeFilm();
+          }
+        });
+
+        // Close with Escape.
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape" && filmModal.classList.contains("active")) {
+            closeFilm();
+          }
+        });
+      });
+    </script>
+
   </body>
 </html>
