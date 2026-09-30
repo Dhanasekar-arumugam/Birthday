@@ -841,17 +841,17 @@
                 <span aria-hidden="true">♡</span>
               </div>
 
-              <h3>A Little Birthday Film</h3>
+              <h3>A Little Cinematic Film</h3>
 
               <p>
-                A tiny cinematic surprise made to celebrate your beautiful day.
+                Ulaga alaga Naan dhaaaa !! 😍.
               </p>
 
               <button
                 class="film-open"
                 type="button"
                 data-video="images/neisdhana.mp4"
-                data-title="A Little Birthday Film"
+                data-title="A Little Cinematic Film"
               >
                 <span>Watch the film</span>
                 <span aria-hidden="true">→</span>
@@ -863,17 +863,21 @@
           <article class="memory-film">
             <div
               class="film-screen"
-              data-video="images/video2.mp4"
+              data-video="images/video104.mp4"
               data-title="Our Memory Lane"
               role="button"
               tabindex="0"
               aria-label="Play Our Memory Lane"
             >
-              <img
-                src="images/video-cover2.jpg"
-                alt="Our memory lane video cover"
-                loading="lazy"
-              />
+                <video
+                class="film-cover-video"
+                muted
+                playsinline
+                preload="metadata"
+                aria-hidden="true"
+              >
+                <source src="images/video104.mp4" type="video/mp4" />
+              </video>
 
               <span class="film-number"> FILM 02 </span>
 
@@ -887,7 +891,7 @@
                 ▶
               </button>
 
-              <div class="film-overlay-title">Little moments, forever.</div>
+              <div class="film-overlay-title">Little moments.</div>
             </div>
 
             <div class="film-details">
@@ -896,17 +900,16 @@
                 <span aria-hidden="true">✦</span>
               </div>
 
-              <h3>Our Memory Lane</h3>
+              <h3>For fun </h3>
 
               <p>
-                Revisit the photographs, laughter and little adventures that
-                became unforgettable.
+                Appo Puriyala Ippo Puriyudhuuuu 😀
               </p>
 
               <button
                 class="film-open"
                 type="button"
-                data-video="images/video2.mp4"
+                data-video="images/video104.mp4"
                 data-title="Our Memory Lane"
               >
                 <span>Relive the memories</span>
@@ -919,17 +922,21 @@
           <article class="memory-film">
             <div
               class="film-screen"
-              data-video="images/video3.mp4"
+              data-video="images/video.106.mp4"
               data-title="A Message from the Heart"
               role="button"
               tabindex="0"
               aria-label="Play A Message from the Heart"
             >
-              <img
-                src="images/video-cover3.jpg"
-                alt="Handwritten letter video cover"
-                loading="lazy"
-              />
+              <video
+                class="film-cover-video"
+                muted
+                playsinline
+                preload="metadata"
+                aria-hidden="true"
+              >
+                <source src="images/video.106.mp4" type="video/mp4" />
+              </video>
 
               <span class="film-number"> FILM 03 </span>
 
@@ -952,7 +959,7 @@
                 <span aria-hidden="true">♥</span>
               </div>
 
-              <h3>A Message from the Heart</h3>
+              <h3>A Message from the Heart with forever Our ♫𝄞.</h3>
 
               <p>
                 A personal video filled with wishes, gratitude and a little
@@ -962,7 +969,7 @@
               <button
                 class="film-open"
                 type="button"
-                data-video="images/video3.mp4"
+                data-video="images/video.106.mp4"
                 data-title="A Message from the Heart"
               >
                 <span>Open your message</span>
@@ -975,17 +982,21 @@
           <article class="memory-film">
             <div
               class="film-screen"
-              data-video="images/video4.mp4"
+              data-video="images/video.105.mp4"
               data-title="Forever in My Memories"
               role="button"
               tabindex="0"
               aria-label="Play Forever in My Memories"
             >
-              <img
-                src="images/video-cover4.jpg"
-                alt="Special friendship memories video cover"
-                loading="lazy"
-              />
+              <video
+                class="film-cover-video"
+                muted
+                playsinline
+                preload="metadata"
+                aria-hidden="true"
+              >
+                <source src="images/video.105.mp4" type="video/mp4" />
+              </video>
 
               <span class="film-number"> FILM 04 </span>
 
@@ -1018,7 +1029,7 @@
               <button
                 class="film-open"
                 type="button"
-                data-video="images/video4.mp4"
+                data-video="images/video.105.mp4"
                 data-title="Forever in My Memories"
               >
                 <span>Watch our memories</span>
@@ -1126,7 +1137,7 @@
 
               <p>
                 The random pictures, silly moments, long conversations and
-                unforgettable laughs.
+                unforgettable laughs. And always I’m addicted to your smile.
               </p>
             </div>
           </div>
@@ -1531,19 +1542,17 @@
           filmModal.setAttribute("aria-hidden", "false");
           document.body.classList.add("no-scroll");
 
-          // Start playback after the source has loaded.
+          // Start playback after the source is ready.
           const startPlayback = () => {
-            const playPromise = filmPlayer.play();
-
-            if (playPromise && typeof playPromise.catch === "function") {
-              playPromise.catch(() => {
-                // Browser may block programmatic playback.
-                // The native video controls remain available.
-              });
-            }
+            filmPlayer.play().catch(() => {
+              // If autoplay is blocked, the native controls remain available.
+            });
           };
 
-          filmPlayer.addEventListener("loadeddata", startPlayback, { once: true });
+          filmPlayer.addEventListener("canplay", startPlayback, { once: true });
+          filmPlayer.addEventListener("error", () => {
+            console.error("Unable to load video:", videoUrl);
+          }, { once: true });
         };
 
         const closeFilm = () => {
